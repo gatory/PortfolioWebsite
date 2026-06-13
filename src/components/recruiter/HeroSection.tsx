@@ -26,7 +26,7 @@ export default function HeroSection() {
       description:
         "Transforming complex datasets into insights. Specializing in Python, machine learning, and visualization tools.",
       thumbnail: "/images/thumb-duck3.jpg",
-      background: "/images/thumb-matrix.jpg",
+      background: "/images/AirbnbNYC/thumb-matrix.jpg",
     },
   ];
 
