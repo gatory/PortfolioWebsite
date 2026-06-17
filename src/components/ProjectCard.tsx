@@ -24,10 +24,24 @@ export interface ProjectCardProps {
 const TAG_COLORS = [
     "bg-blue-500/20 text-blue-200 border-blue-500/30",
     "bg-purple-500/20 text-purple-200 border-purple-500/30",
-    "bg-emerald-500/20 text-emerald-200 border-emerald-500/30",
     "bg-amber-500/20 text-amber-200 border-amber-500/30",
     "bg-rose-500/20 text-rose-200 border-rose-500/30",
 ];
+
+const TAG_DICT = [
+    {
+        'Node.js':
+            "bg-emerald-500/20 text-emerald-200 border-emerald-500/30"
+    },
+    {
+        'Node.js':
+            "bg-emerald-500/20 text-emerald-200 border-emerald-500/30"
+    },
+    {
+        'Node.js':
+            "bg-emerald-500/20 text-emerald-200 border-emerald-500/30"
+    },
+]
 
 export default function ProjectCard({
     projectName = "Project Name",
@@ -63,7 +77,7 @@ export default function ProjectCard({
         <div
             ref={cardRef}
             onMouseEnter={handleMouseEnter}
-            className={`group relative w-55 h-80 hover:scale-120 rounded-xl transition-all duration-500 cursor-pointer z-10 hover:z-[100] ${originClass}`}
+            className={`group relative w-55 h-80 hover:scale-120 rounded-xl transition-all duration-500 cursor-pointer z-10 hover:z-[100] ${originClass} pointer-events-auto`}
             style={{ perspective: "1000px" }}
         >
             <div
@@ -72,7 +86,7 @@ export default function ProjectCard({
             >
                 {/* Front Face */}
                 <div
-                    className="absolute inset-0 overflow-hidden font-bebas rounded-xl z-20 transition-shadow duration-500 group-hover:ring-2 group-hover:ring-white"
+                    className="absolute inset-0 overflow-hidden font-bebas rounded-xl z-20 transition-shadow duration-500 group-hover:border-2 group-hover:border-white"
                     style={{
                         backfaceVisibility: "hidden",
                         WebkitBackfaceVisibility: "hidden",
@@ -113,19 +127,19 @@ export default function ProjectCard({
                         <Image
                             src={icon}
                             alt={`${projectName} icon`}
-                            width={64}
-                            height={64}
+                            width={96}
+                            height={96}
                             className="absolute top-16 left-1/2 -translate-x-1/2"
                         />
                     )}
 
                     {/* Front Title */}
-                    <div className="absolute bottom-0 left-0 w-full px-2 pb-3 text-center">
-                        <h2 className="text-xl leading-tight line-clamp-2">
+                    <div className="absolute bottom-5 left-0 w-full px-2 pb-3 text-center">
+                        <h2 className="text-3xl leading-tight line-clamp-2">
                             {projectName}
                         </h2>
                         {tags && tags.length > 0 && (
-                            <p className="text-xs tracking-wide text-secondary mt-1 overflow-hidden line-clamp-1">
+                            <p className="text-xl tracking-wide text-secondary mt-1 overflow-hidden line-clamp-1">
                                 {tags.slice(0, 3).join(" · ")}
                             </p>
                         )}
@@ -134,7 +148,7 @@ export default function ProjectCard({
 
                 {/* Back Face */}
                 <div
-                    className="absolute inset-0 overflow-hidden p-4 flex flex-col justify-center items-center rounded-xl shadow-xl z-10 transition-shadow duration-500 group-hover:ring-2 group-hover:ring-white"
+                    className="absolute inset-0 overflow-hidden p-6 flex flex-col justify-center items-center rounded-xl shadow-xl z-10 transition-shadow duration-500 group-hover:border-2 group-hover:border-white"
                     style={{
                         backfaceVisibility: "hidden",
                         WebkitBackfaceVisibility: "hidden",
@@ -169,12 +183,12 @@ export default function ProjectCard({
                     <div className="relative z-10 flex flex-col w-full h-full text-left">
                         {/* Text Content */}
                         <div className="flex flex-col justify-start gap-2">
-                            <h3 className="font-bebas text-xl text-primary mb-1 leading-tight">
+                            <h3 className="font-bebas text-2xl text-primary mb-1 leading-tight">
                                 {projectName}
                             </h3>
 
                             {description && (
-                                <p className="font-barlow text-base text-secondary line-clamp-3 mb-4">
+                                <p className="font-barlow text-lg text-secondary line-clamp-3 mb-4">
                                     {description}
                                 </p>
                             )}
@@ -191,7 +205,7 @@ export default function ProjectCard({
                             </div>
                         )}
 
-                        <div className="flex justify-start gap-3 mt-auto pb-2">
+                        <div className="flex justify-start gap-3 mt-auto py-1">
                             {route && (
                                 <PlayButton projectOverviewRoute={route} />
                             )}

@@ -31,7 +31,7 @@ export default function StatusBadge({
   return (
     status && (
       <div 
-        className={`absolute w-fit top-2 right-2 text-[10px] uppercase tracking-widest px-2 py-0.1 rounded-xs z-10 ${colorClasses} text-center`}
+        className={`absolute w-fit top-2 right-2 text-[15px] uppercase tracking-widest px-2 py-0.1 rounded-xs z-10 ${colorClasses} text-center`}
         style={{
           backgroundColor: customBackgroundColor,
           color: customLetterColor,
