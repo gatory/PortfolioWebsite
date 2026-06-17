@@ -1,5 +1,5 @@
 export interface StatusBadgeProps {
-  status: "complete" | "live" | "in-dev" | "upcoming";
+  status: "completed" | "live" | "in-dev" | "upcoming";
   customLetterColor?: string;
   customBackgroundColor?: string;
 }
@@ -12,7 +12,7 @@ export default function StatusBadge({
   let colorClasses = "";
 
   switch (status) {
-    case "complete":
+    case "completed":
       colorClasses = "bg-blue-900 text-blue-400";
       break;
     case "live":

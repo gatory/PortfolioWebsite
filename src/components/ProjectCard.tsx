@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -15,7 +16,6 @@ export interface ProjectCardProps {
     background?: string;
     bgColor?: string;
     icon?: string;
-    stack?: string[];
     status?: StatusBadgeProps["status"];
     description?: string;
     tags?: string[];
@@ -37,16 +37,33 @@ export default function ProjectCard({
     background,
     bgColor = "#7B46B4",
     icon = "/images/icons/default-icon.png",
-    stack = [],
-    status = "complete",
+    status = "completed",
     description = "Project Description",
     tags = ['Next.js'],
 }: ProjectCardProps) {
     const router = useRouter();
+    const cardRef = useRef<HTMLDivElement>(null);
+    const [originClass, setOriginClass] = useState("origin-center");
+
+    const handleMouseEnter = () => {
+        if (!cardRef.current) return;
+        const rect = cardRef.current.getBoundingClientRect();
+        const padding = 48; // Safe padding buffer to detect edges
+
+        if (rect.left < padding) {
+            setOriginClass("origin-left");
+        } else if (window.innerWidth - rect.right < padding) {
+            setOriginClass("origin-right");
+        } else {
+            setOriginClass("origin-center");
+        }
+    };
 
     return (
         <div
-            className="group relative w-40 h-60 hover:w-64 hover:h-72 rounded-xl transition-all duration-500 cursor-pointer z-10 hover:z-20"
+            ref={cardRef}
+            onMouseEnter={handleMouseEnter}
+            className={`group relative w-55 h-80 hover:scale-120 rounded-xl transition-all duration-500 cursor-pointer z-10 hover:z-[100] ${originClass}`}
             style={{ perspective: "1000px" }}
         >
             <div
@@ -89,7 +106,7 @@ export default function ProjectCard({
                     />
 
                     {/* Status Badge */}
-                    <StatusBadge status={status}/>
+                    <StatusBadge status={status} />
 
                     {/* Icon Logic for non-thumbnail */}
                     {!thumbnail && (
@@ -107,9 +124,9 @@ export default function ProjectCard({
                         <h2 className="text-xl leading-tight line-clamp-2">
                             {projectName}
                         </h2>
-                        {stack && stack.length > 0 && (
-                            <p className="text-xs tracking-wide text-secondary mt-1">
-                                {stack.join(" · ")}
+                        {tags && tags.length > 0 && (
+                            <p className="text-xs tracking-wide text-secondary mt-1 overflow-hidden line-clamp-1">
+                                {tags.slice(0, 3).join(" · ")}
                             </p>
                         )}
                     </div>
@@ -135,7 +152,7 @@ export default function ProjectCard({
                     )}
 
                     {/* Icon Logic for non-thumbnail */}
-                    {!thumbnail && (
+                    {!background && (
                         <Image
                             src={icon}
                             alt={`${projectName} icon`}
@@ -148,7 +165,7 @@ export default function ProjectCard({
                     <div
                         className="absolute inset-0 bg-linear-to-t from-black via-black/80 to-black/80"
                     />
-                    
+
                     <div className="relative z-10 flex flex-col w-full h-full text-left">
                         {/* Text Content */}
                         <div className="flex flex-col justify-start gap-2">
@@ -162,7 +179,7 @@ export default function ProjectCard({
                                 </p>
                             )}
                         </div>
-                        
+
 
                         {tags && tags.length > 0 && (
                             <div className="flex flex-wrap justify-start gap-1.5 mb-4">
@@ -179,7 +196,7 @@ export default function ProjectCard({
                                 <PlayButton projectOverviewRoute={route} />
                             )}
                             {githubUrl && (
-                                <GithubButton githubRepoLink={githubUrl} size="sm"/>
+                                <GithubButton githubRepoLink={githubUrl} size="sm" />
                             )}
                         </div>
                     </div>
