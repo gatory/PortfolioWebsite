@@ -77,7 +77,7 @@ export default function ProjectCard({
         <div
             ref={cardRef}
             onMouseEnter={handleMouseEnter}
-            className={`group relative w-55 h-80 hover:scale-120 rounded-xl transition-all duration-500 cursor-pointer z-10 hover:z-[100] ${originClass} pointer-events-auto`}
+            className={`group relative w-55 h-80 hover:scale-120 rounded-xl transition-all duration-500 cursor-pointer z-10 hover:z-100 ${originClass} pointer-events-auto`}
             style={{ perspective: "1000px" }}
         >
             <div
