@@ -9,7 +9,7 @@ import ProgressCard from '../ProgressCard'
 const FILTER = ['all', 'full-stack', 'data', 'embedded', 'ai / machine learning', 'misc']
 const CARD_WIDTH = 200
 const CARD_GAP = 16
-const VISIBLE_COUNT = 8
+const VISIBLE_COUNT = 6
 
 export default function ProjectSection() {
     const [activeFilter, setActiveFilter] = useState('all')
@@ -80,7 +80,7 @@ export default function ProjectSection() {
                     </div>
 
                     {/* Arrow Buttons */}
-                    <div className="flex gap-2 shrink-0">
+                    <div className="hidden lg:flex gap-2 shrink-0">
                         <button
                             onClick={scrollLeft}
                             disabled={!canScrollLeft}
@@ -111,8 +111,30 @@ export default function ProjectSection() {
 
                 {/* Project Cards */}
                 <div className="w-full overflow-y-visible">
+
+                    {/* Mobile — native horizontal scroll */}
+                    <div className='lg:hidden flex gap-4 flex-nowrap overflow-x-auto scrollbar-none py-4 -my-4'>
+                        {filteredProjects.map((project) => (
+                            <div key={project.id} className="shrink-0">
+                                <ProjectCard
+                                    projectName={project.projectName}
+                                    route={project.route}
+                                    githubUrl={project.githubUrl}
+                                    thumbnail={project.thumbnail}
+                                    background={project.background}
+                                    bgColor={project.bgColor}
+                                    icon={project.icon}
+                                    status={project.status}
+                                    description={project.description}
+                                    tags={project.tags}
+                                />
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Desktop — arrow controlled translateX */}
                     <div
-                        className="flex gap-4 flex-nowrap pointer-events-none py-12 -my-12 transition-transform duration-500 ease-in-out"
+                        className="hidden lg:flex gap-4 flex-nowrap pointer-events-none py-12 -my-12 transition-transform duration-500 ease-in-out"
                         style={{
                             transform: `translateX(-${featuredIndex * (CARD_WIDTH + CARD_GAP)}px)`
                         }}
@@ -134,6 +156,7 @@ export default function ProjectSection() {
                             </div>
                         ))}
                     </div>
+
                 </div>
             </div>
 
@@ -152,7 +175,7 @@ export default function ProjectSection() {
                 </div>
 
                 {/* Progress Cards */}
-                <div className='flex w-full gap-4 flex-nowrap overflow-x-auto scrollbar-none fade py-6 -my-6 px-6 -mx-6'>
+                <div className='flex w-full gap-4 flex-nowrap overflow-x-auto scrollbar-none fade lg:py-6 lg:-my-6 lg:px-6 lg:-mx-6'>
                     {currentlyBuilding.map((project) => (
                         <ProgressCard
                             key={project.id}
