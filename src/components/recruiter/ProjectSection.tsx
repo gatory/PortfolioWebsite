@@ -1,14 +1,15 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { projects } from '@/data/projects'
 import ProjectCard from '@/components/ProjectCard'
 import ProgressCard from '../ProgressCard'
 
-const FILTER = ['all', 'full-stack', 'data', 'embedded', 'ai', 'misc']
-const CARD_WIDTH = 220 // w-55 in Tailwind = 220px
-const CARD_GAP = 16   // gap-4 = 16px
-const VISIBLE_COUNT = 6
+const FILTER = ['all', 'full-stack', 'data', 'embedded', 'ai / machine learning', 'misc']
+const CARD_WIDTH = 200
+const CARD_GAP = 16
+const VISIBLE_COUNT = 8
 
 export default function ProjectSection() {
     const [activeFilter, setActiveFilter] = useState('all')
@@ -36,26 +37,39 @@ export default function ProjectSection() {
     )
 
     return (
-        <section className="w-full min-h-screen flex flex-col gap-8 p-8">
-
+        <section className="w-full min-h-full flex flex-col gap-8 p-8 items-center lg:items-start lg:p-10">
             {/* Section Title */}
-            <div className="relative inline-block">
-                <h2 className="font-bebas text-5xl relative z-10">Projects</h2>
-                <div className="absolute bottom-0 left-6 w-36 h-3 bg-accent z-0" />
+            <div className="relative inline-block text-center lg:text-left">
+                <h2 className="font-bebas text-5xl relative z-10 lg:text-6xl">
+                    Projects
+                </h2>
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 lg:left-6 lg:translate-x-0 w-36 h-3 bg-accent z-0 lg:w-46 lg:h-4" />
             </div>
 
             {/* Featured Projects */}
-            <div className="flex flex-col gap-4">
-                <h3 className="font-bebas text-3xl">Featured Projects</h3>
+            <div className="flex flex-col gap-4 w-full lg:items-start">
+                {/* Title */}
+                <div className="flex items-baseline gap-2">
+                    <Image
+                        src="/images/icons/fire-icon.png"
+                        alt="fire icon"
+                        width={20}
+                        height={20}
+                        className="object-contain"
+                    />
+                    <h2 className="font-bebas text-2xl text-left lg:text-3xl">Featured Projects</h2>
+                </div>
 
-                {/* Filter Tabs */}
-                <div className="flex justify-between items-center w-full gap-4 flex-wrap">
-                    <div className="flex gap-2 flex-wrap">
+                {/* Filter Bar */}
+                <div className="flex w-full items-center justify-between gap-4">
+
+                    {/* Filter Tabs — scrollable */}
+                    <div className="flex gap-2 flex-nowrap overflow-x-auto scrollbar-none fade flex-1">
                         {FILTER.map((filter) => (
                             <button
                                 key={filter}
-                                onClick={() => setActiveFilter(filter)}
-                                className={`px-4 py-1.5 text-base font-bold uppercase tracking-widest transition-colors rounded-sm cursor-pointer border ${activeFilter === filter
+                                onClick={() => handleFilterChange(filter)}
+                                className={`px-4 py-1.5 text-base font-bold uppercase tracking-widest transition-colors rounded-sm cursor-pointer border whitespace-nowrap ${activeFilter === filter
                                     ? 'bg-accent text-white border-accent'
                                     : 'bg-transparent text-secondary border-secondary/40 hover:border-white hover:text-white'
                                     }`}
@@ -65,16 +79,15 @@ export default function ProjectSection() {
                         ))}
                     </div>
 
+                    {/* Arrow Buttons */}
                     <div className="flex gap-2 shrink-0">
                         <button
                             onClick={scrollLeft}
                             disabled={!canScrollLeft}
-                            suppressHydrationWarning
-                            className={`w-8 h-8 rounded-full border flex items-center justify-center transition-all text-sm ${
-                                canScrollLeft
-                                    ? 'border-white/40 text-white hover:border-white hover:bg-white/10'
-                                    : 'border-white/10 text-white/20 cursor-not-allowed'
-                            }`}
+                            className={`w-9 h-9 rounded-full flex items-center justify-center border transition-all duration-200 ${canScrollLeft
+                                ? 'border-white/30 text-white hover:border-white hover:bg-white/10'
+                                : 'border-white/10 text-white/20 cursor-not-allowed'
+                                }`}
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -83,69 +96,75 @@ export default function ProjectSection() {
                         <button
                             onClick={scrollRight}
                             disabled={!canScrollRight}
-                            suppressHydrationWarning
-                            className={`w-8 h-8 rounded-full border flex items-center justify-center transition-all text-sm ${
-                                canScrollRight
-                                    ? 'border-white/40 text-white hover:border-white hover:bg-white/10'
-                                    : 'border-white/10 text-white/20 cursor-not-allowed'
-                            }`}
+                            className={`w-9 h-9 rounded-full flex items-center justify-center border transition-all duration-200 ${canScrollRight
+                                ? 'border-white/30 text-white hover:border-white hover:bg-white/10'
+                                : 'border-white/10 text-white/20 cursor-not-allowed'
+                                }`}
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                             </svg>
                         </button>
                     </div>
+
                 </div>
 
-                {/* Cards Row */}
-                <div className="overflow-hidden py-10 -my-8 px-4 -mx-4 pointer-events-none">
+                {/* Project Cards */}
+                <div className="w-full overflow-y-visible">
                     <div
-                        className="flex gap-4 transition-transform duration-500 ease-in-out"
+                        className="flex gap-4 flex-nowrap pointer-events-none py-12 -my-12 transition-transform duration-500 ease-in-out"
                         style={{
                             transform: `translateX(-${featuredIndex * (CARD_WIDTH + CARD_GAP)}px)`
                         }}
                     >
-                        {filteredProjects.length > 0 ? (
-                            filteredProjects.map((project) => (
-                                <div key={project.id} className="shrink-0">
-                                    <ProjectCard
-                                        projectName={project.projectName}
-                                        route={project.route}
-                                        githubUrl={project.githubUrl}
-                                        thumbnail={project.thumbnail}
-                                        background={project.background}
-                                        status={project.status}
-                                        description={project.description}
-                                        tags={project.tags}
-                                    />
-                                </div>
-                            ))
-                        ) : (
-                            <p className="font-barlow text-secondary text-sm py-8">
-                                No projects in this category yet.
-                            </p>
-                        )}
+                        {filteredProjects.map((project) => (
+                            <div key={project.id} className="pointer-events-auto shrink-0">
+                                <ProjectCard
+                                    projectName={project.projectName}
+                                    route={project.route}
+                                    githubUrl={project.githubUrl}
+                                    thumbnail={project.thumbnail}
+                                    background={project.background}
+                                    bgColor={project.bgColor}
+                                    icon={project.icon}
+                                    status={project.status}
+                                    description={project.description}
+                                    tags={project.tags}
+                                />
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
 
             {/* Currently Building */}
-            <div className="flex flex-col gap-4">
-                <h3 className="font-bebas text-3xl">Currently Building</h3>
-                <div className="relative flex flex-nowrap overflow-x-auto gap-4 py-8 -my-8 px-4 -mx-4 pointer-events-none">
-                    
-                    {projects.filter(p => p.currentlyBuilding).map((project) => (
+            <div className="flex flex-col gap-4 w-full lg:items-start">
+                {/* Title */}
+                <div className="flex items-baseline gap-2">
+                    <Image
+                        src="/images/icons/WIP-icon.png"
+                        alt="Work in Progress icon"
+                        width={20}
+                        height={20}
+                        className="object-contain"
+                    />
+                    <h2 className="font-bebas text-2xl text-left lg:text-3xl">Currently Building</h2>
+                </div>
+
+                {/* Progress Cards */}
+                <div className='flex w-full gap-4 flex-nowrap overflow-x-auto scrollbar-none fade py-6 -my-6 px-6 -mx-6'>
+                    {currentlyBuilding.map((project) => (
                         <ProgressCard
                             key={project.id}
                             projectName={project.projectName}
                             route={project.route}
                             background={project.background}
+                            bgColor={project.bgColor}
+                            icon={project.icon}
                         />
-                        // <ProgressCard />
                     ))}
                 </div>
             </div>
-
         </section>
     )
 }
