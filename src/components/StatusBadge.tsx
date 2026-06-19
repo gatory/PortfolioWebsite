@@ -1,44 +1,33 @@
 export interface StatusBadgeProps {
-  status: "completed" | "live" | "in-dev" | "upcoming";
-  customLetterColor?: string;
-  customBackgroundColor?: string;
+    status: "completed" | "live" | "in-dev" | "upcoming";
+    customLetterColor?: string;
+    customBackgroundColor?: string;
 }
 
 export default function StatusBadge({
-  status,
-  customLetterColor,
-  customBackgroundColor,
+    status,
+    customLetterColor,
+    customBackgroundColor,
 }: StatusBadgeProps) {
-  let colorClasses = "";
+    const colorClasses = {
+        completed: "bg-blue-900 text-blue-400",
+        live: "bg-green-900 text-green-400",
+        "in-dev": "bg-yellow-900 text-yellow-400",
+        upcoming: "bg-purple-900 text-purple-400",
+    }[status];
 
-  switch (status) {
-    case "completed":
-      colorClasses = "bg-blue-900 text-blue-400";
-      break;
-    case "live":
-      colorClasses = "bg-green-900 text-green-400";
-      break;
-    case "in-dev":
-      colorClasses = "bg-yellow-900 text-yellow-400";
-      break;
-    case "upcoming":
-      colorClasses = "bg-purple-900 text-purple-400";
-      break;
-    default:
-      colorClasses = "bg-gray-900 text-gray-400";
-  }
-
-  return (
-    status && (
-      <div 
-        className={`absolute w-fit top-2 right-2 text-[15px] uppercase tracking-widest px-2 py-0.1 rounded-xs z-10 ${colorClasses} text-center`}
-        style={{
-          backgroundColor: customBackgroundColor,
-          color: customLetterColor,
-        }}
-      >
-        {status}
-      </div>
-    )
-  );
+    return (
+        <div
+            className={`absolute top-2 right-2 z-10 w-fit rounded-sm uppercase tracking-widest text-center font-medium
+                text-[12px] px-1.5 py-px
+                lg:text-[15px] lg:px-2 lg:py-0.5
+                ${colorClasses}`}
+            style={{
+                backgroundColor: customBackgroundColor,
+                color: customLetterColor,
+            }}
+        >
+            {status}
+        </div>
+    );
 }
