@@ -37,7 +37,7 @@ export default function ProjectSection() {
     )
 
     return (
-        <section className="w-full min-h-full flex flex-col gap-8 p-8 items-center lg:items-start lg:p-10">
+        <section className="w-full flex flex-col gap-8 p-8 items-center lg:items-start lg:p-10">
             {/* Section Title */}
             <div className="relative inline-block text-center lg:text-left">
                 <h2 className="font-bebas text-5xl relative z-10 lg:text-6xl">
@@ -163,7 +163,7 @@ export default function ProjectSection() {
             {/* Currently Building */}
             <div className="flex flex-col gap-4 w-full lg:items-start">
                 {/* Title */}
-                <div className="flex items-baseline gap-2">
+                <div className="flex items-center gap-2">
                     <Image
                         src="/images/icons/WIP-icon.png"
                         alt="Work in Progress icon"
