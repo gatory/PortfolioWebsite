@@ -112,7 +112,7 @@ export default function ProjectCard({
             <div
                 ref={cardRef}
                 onMouseEnter={handleMouseEnter}
-                className={`group relative w-full h-full hover:scale-120 rounded-xl transition-transform duration-500 cursor-pointer z-10 hover:z-100 ${originClass} pointer-events-auto`}
+                className={`hidden lg:block group relative w-full h-full hover:scale-120 rounded-xl transition-transform duration-500 cursor-pointer z-10 hover:z-100 ${originClass} pointer-events-auto`}
             >
                 {/* Perspective + flip wrapper */}
                 <div
