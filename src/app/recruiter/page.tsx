@@ -1,3 +1,4 @@
+import ContactSection from "@/components/ContactSection";
 import ExperienceSection from "@/components/recruiter/ExperienceSection";
 import HeroSection from "@/components/recruiter/HeroSection";
 import Navbar from "@/components/recruiter/Navbar";
@@ -10,6 +11,7 @@ export default function RecruiterProfile() {
             <HeroSection />
             <ProjectSection />
             <ExperienceSection />
+            <ContactSection />
         </main>
     )
 }
