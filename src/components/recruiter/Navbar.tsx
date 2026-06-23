@@ -91,9 +91,9 @@ export default function Navbar() {
   return (
     <nav className="absolute top-0 left-0 w-full bg-transparent flex items-center justify-between lg:justify-start lg:gap-20 p-8 lg:p-10 lg:pt-6 text-primary z-50">
       {/* Logo shows on both */}
-      <h2 className="font-bebas text-4xl lg:text-5xl text-accent tracking-wider">
+      <Link href="/" className="font-bebas text-4xl lg:text-5xl text-accent tracking-wider hover:opacity-85 transition-opacity duration-200">
         Kuan.Code
-      </h2>
+      </Link>
 
       {/* Mobile */}
       {/* Hamburger Button */}
@@ -135,9 +135,9 @@ export default function Navbar() {
       >
         {/* Top Logo & Divider */}
         <div className="flex items-center justify-center h-20 mt-15 border-slate-700">
-          <h2 className="font-bebas text-3xl text-accent tracking-wider">
+          <Link href="/" className="font-bebas text-3xl text-accent tracking-wider hover:opacity-85 transition-opacity duration-200">
             Kuan.Code
-          </h2>
+          </Link>
         </div>
 
         {/* Profile Selection Dropdown */}
