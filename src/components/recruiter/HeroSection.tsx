@@ -32,6 +32,8 @@ export default function HeroSection() {
 
   //   Swipe Logic
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [typedSubtitle, setTypedSubtitle] = useState("");
+  const [typedDescription, setTypedDescription] = useState("");
 
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
@@ -46,13 +48,67 @@ export default function HeroSection() {
     );
   };
 
-  // Auto rotation controller
+  // Typing effect for subtitle and description with dynamic auto-rotation
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 5000);
+    setTypedSubtitle("");
+    setTypedDescription("");
 
-    return () => clearInterval(interval);
+    let active = true;
+    let startTimeout: any;
+    let subtitleInterval: any;
+    let pauseTimeout: any;
+    let descriptionInterval: any;
+    let nextSlideTimeout: any;
+
+    // Start typing subtitle after a short slide-in transition delay
+    startTimeout = setTimeout(() => {
+      if (!active) return;
+      let subtitleIdx = 0;
+      const subtitleText = slides[currentSlide].subtitle;
+
+      subtitleInterval = setInterval(() => {
+        if (!active) return;
+        if (subtitleIdx < subtitleText.length) {
+          setTypedSubtitle(subtitleText.slice(0, subtitleIdx + 1));
+          subtitleIdx++;
+        } else {
+          clearInterval(subtitleInterval);
+
+          // Pause briefly after subtitle is finished before typing description
+          pauseTimeout = setTimeout(() => {
+            if (!active) return;
+            let descIdx = 0;
+            const descriptionText = slides[currentSlide].description;
+
+            descriptionInterval = setInterval(() => {
+              if (!active) return;
+              if (descIdx < descriptionText.length) {
+                setTypedDescription(descriptionText.slice(0, descIdx + 1));
+                descIdx++;
+              } else {
+                clearInterval(descriptionInterval);
+
+                // Hold on current slide after text is fully typed, then advance
+                nextSlideTimeout = setTimeout(() => {
+                  if (active) {
+                    nextSlide();
+                  }
+                }, 3500); // 3.5 seconds reading time
+              }
+            }, 20); // Snappy 20ms per character for description
+          }, 500); // 500ms pause between text sections
+        }
+      }, 80); // 80ms per character for subtitle
+    }, 400);
+
+    return () => {
+      active = false;
+      clearTimeout(startTimeout);
+      if (subtitleInterval) clearInterval(subtitleInterval);
+      clearTimeout(pauseTimeout);
+      if (descriptionInterval) clearInterval(descriptionInterval);
+      clearTimeout(nextSlideTimeout);
+    };
   }, [currentSlide]);
 
   // Swipe gesture handler
@@ -77,6 +133,27 @@ export default function HeroSection() {
     touchEndX.current = 0;
   };
 
+  const renderTypedText = (text: string, showCursor: boolean, cursorColorClass: string) => {
+    if (!text) {
+      return showCursor ? (
+        <span className={`w-0.75 h-[0.9em] animate-blink inline-block align-middle ${cursorColorClass}`} />
+      ) : null;
+    }
+    const textWithoutLastChar = text.slice(0, -1);
+    const lastChar = text.slice(-1);
+    return (
+      <>
+        {textWithoutLastChar}
+        <span className="whitespace-nowrap">
+          {lastChar}
+          {showCursor && (
+            <span className={`w-0.75 h-[0.9em] ml-1.5 animate-blink inline-block align-middle ${cursorColorClass}`} />
+          )}
+        </span>
+      </>
+    );
+  };
+
   return (
     <section
       className="relative h-screen flex flex-col justify-end lg:justify-center overflow-hidden"
@@ -86,21 +163,32 @@ export default function HeroSection() {
     >
       {/* Background Image Container */}
       <div className="absolute inset-0 w-full h-full -z-10">
-        <Image
-          src={slides[currentSlide].background}
-          alt={`${slides[currentSlide].subtitle} Background`}
-          fill
-          className="hidden lg:block object-cover transition-all ease-in-out"
-          priority
-        />
+        {slides.map((slide, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1500 ease-in-out ${
+              index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            {/* Desktop Background */}
+            <Image
+              src={slide.background}
+              alt={`${slide.subtitle} Background`}
+              fill
+              className="hidden lg:block object-cover"
+              priority={index === 0}
+            />
 
-        <Image
-          src={slides[currentSlide].thumbnail}
-          alt={`${slides[currentSlide].subtitle} Background`}
-          fill
-          className="lg:hidden object-cover transition-all ease-in-out"
-          priority
-        />
+            {/* Mobile Thumbnail Background */}
+            <Image
+              src={slide.thumbnail}
+              alt={`${slide.subtitle} Background`}
+              fill
+              className="lg:hidden object-cover"
+              priority={index === 0}
+            />
+          </div>
+        ))}
 
         {/* Gradient overlay */}
         {/* Mobile gradient */}
@@ -118,11 +206,11 @@ export default function HeroSection() {
           <br className="hidden lg:block" />
           Wei
         </h1>
-        <h3 className="font-bebas text-3xl lg:text-6xl text-accent tracking-wider">
-          {slides[currentSlide].subtitle}
+        <h3 className="font-bebas text-3xl lg:text-6xl text-accent tracking-wider min-h-[1.2em] flex items-center">
+          {renderTypedText(typedSubtitle, typedDescription.length === 0, "bg-accent")}
         </h3>
-        <p className="hidden lg:block text-base text-secondary tracking-wide max-w-lg lg:text-2xl text-center lg:text-left">
-          {slides[currentSlide].description}
+        <p className="hidden lg:block text-base text-secondary tracking-wide max-w-lg lg:text-2xl text-center lg:text-left min-h-[4.8em]">
+          {renderTypedText(typedDescription, typedDescription.length > 0, "bg-secondary")}
         </p>
 
         <div className="flex gap-4 pt-5 lg:pt-0">
@@ -166,6 +254,15 @@ export default function HeroSection() {
           ))}
         </div>
       </div>
+      <style>{`
+        @keyframes blink {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0; }
+        }
+        .animate-blink {
+          animation: blink 0.8s step-end infinite;
+        }
+      `}</style>
     </section>
   );
 }
