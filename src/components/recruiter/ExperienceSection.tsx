@@ -105,14 +105,14 @@ export default function ExperienceSection() {
                     </div>
 
                     {/* Card Container */}
-                    <div className="relative w-full max-w-5xl h-125 rounded-2xl overflow-hidden self-start my-20 mx-auto border border-white/30">
+                    <div className="group relative w-full max-w-5xl h-125 rounded-2xl overflow-hidden self-start my-20 mx-auto border border-white/20 hover:border-white/40 transition-all duration-500 hover:scale-[1.01] hover:shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_30px_rgba(255,255,255,0.08)]">
 
                         {/* Background image */}
                         <Image
                             src="/images/experienceCard-bg.png"
                             alt="Experience Card Background"
                             fill
-                            className="object-cover object-right"
+                            className="object-cover object-right transition-transform duration-700 ease-out group-hover:scale-105"
                         />
 
                         {/* Gradient overlay — dark on left for text readability */}
