@@ -9,7 +9,7 @@ import ProgressCard from '../ProgressCard'
 const FILTER = ['all', 'full-stack', 'data', 'embedded', 'ai / machine learning', 'misc']
 const CARD_WIDTH = 200
 const CARD_GAP = 16
-const VISIBLE_COUNT = 6
+const VISIBLE_COUNT = 4
 
 export default function ProjectSection() {
     const [activeFilter, setActiveFilter] = useState('all')
@@ -110,7 +110,7 @@ export default function ProjectSection() {
                 </div>
 
                 {/* Project Cards */}
-                <div className="w-full overflow-y-visible">
+                <div className="w-full lg:overflow-hidden lg:py-12 lg:-my-12 lg:pointer-events-none">
 
                     {/* Mobile — native horizontal scroll */}
                     <div className='lg:hidden flex gap-4 flex-nowrap overflow-x-auto scrollbar-none py-4 -my-4'>
@@ -134,7 +134,7 @@ export default function ProjectSection() {
 
                     {/* Desktop — arrow controlled translateX */}
                     <div
-                        className="hidden lg:flex gap-4 flex-nowrap pointer-events-none py-12 -my-12 transition-transform duration-500 ease-in-out"
+                        className="hidden lg:flex gap-4 flex-nowrap pointer-events-none transition-transform duration-500 ease-in-out"
                         style={{
                             transform: `translateX(-${featuredIndex * (CARD_WIDTH + CARD_GAP)}px)`
                         }}
@@ -175,7 +175,7 @@ export default function ProjectSection() {
                 </div>
 
                 {/* Progress Cards */}
-                <div className='flex w-full gap-4 flex-nowrap overflow-x-auto scrollbar-none fade lg:py-6 lg:-my-6 lg:px-6 lg:-mx-6'>
+                <div className='flex w-full gap-4 flex-nowrap overflow-x-auto scrollbar-none lg:py-6 lg:-my-6 lg:px-6 lg:-mx-6'>
                     {currentlyBuilding.map((project) => (
                         <ProgressCard
                             key={project.id}
