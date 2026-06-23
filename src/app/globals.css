@@ -18,3 +18,7 @@
         /* Subtle translucent red tint */
     }
 }
+
+html {
+    scroll-behavior: smooth;
+}

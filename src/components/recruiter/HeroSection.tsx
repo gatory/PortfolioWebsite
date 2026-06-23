@@ -156,6 +156,7 @@ export default function HeroSection() {
 
   return (
     <section
+      id="home"
       className="relative h-screen flex flex-col justify-end lg:justify-center overflow-hidden"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}

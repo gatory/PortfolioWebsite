@@ -8,7 +8,7 @@ import TechnicalStackSection from './TechnicalStackSection';
 export default function ExperienceSection() {
     return (
         <>
-            <section className="relative flex w-full h-screen lg:h-auto flex-col items-center">
+            <section id="experience" className="relative flex w-full h-screen lg:h-auto flex-col items-center">
                 {/* Mobile Layout */}
                 <div className="lg:hidden relative h-full flex flex-col gap-8 p-8 justify-between">
                     {/* Background */}

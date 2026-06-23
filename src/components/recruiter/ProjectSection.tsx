@@ -37,7 +37,7 @@ export default function ProjectSection() {
     )
 
     return (
-        <section className="w-full flex flex-col gap-8 p-8 items-center lg:items-start lg:p-10">
+        <section id="projects" className="w-full flex flex-col gap-8 p-8 items-center lg:items-start lg:p-10">
             {/* Section Title */}
             <div className="relative inline-block text-center lg:text-left">
                 <h2 className="font-bebas text-5xl relative z-10 lg:text-6xl">
