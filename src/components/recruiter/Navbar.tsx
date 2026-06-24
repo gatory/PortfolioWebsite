@@ -3,13 +3,41 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("Home");
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
 
+  const isRecruiterPage = pathname === "/recruiter";
+
+  const sections = [
+    {
+      name: "Home",
+      route: isRecruiterPage ? "#home" : "/recruiter#home",
+    },
+    {
+      name: "Projects",
+      route: isRecruiterPage ? "#projects" : "/recruiter#projects",
+    },
+    {
+      name: "Experience",
+      route: isRecruiterPage ? "#experience" : "/recruiter#experience",
+    },
+    {
+      name: "Contact",
+      route: isRecruiterPage ? "#contact" : "/recruiter#contact",
+    },
+  ];
+
   useEffect(() => {
+    if (pathname?.startsWith("/projects/")) {
+      setActiveSection("Projects");
+      return;
+    }
+
     const observerOptions = {
       root: null,
       rootMargin: "-25% 0px -25% 0px",
@@ -20,7 +48,7 @@ export default function Navbar() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const id = entry.target.id;
-          const matchedSection = sections.find((sec) => sec.route === `#${id}`);
+          const matchedSection = sections.find((sec) => sec.route.endsWith(`#${id}`));
           if (matchedSection) {
             setActiveSection(matchedSection.name);
           }
@@ -31,7 +59,7 @@ export default function Navbar() {
     const observer = new IntersectionObserver(handleIntersection, observerOptions);
 
     sections.forEach((section) => {
-      const id = section.route.substring(1);
+      const id = section.route.split("#")[1];
       const element = document.getElementById(id);
       if (element) {
         observer.observe(element);
@@ -41,7 +69,7 @@ export default function Navbar() {
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [pathname]);
 
   const profiles = [
     {
@@ -69,27 +97,8 @@ export default function Navbar() {
     setIsOpen(!isOpen);
   };
 
-  const sections = [
-    {
-      name: "Home",
-      route: "#home",
-    },
-    {
-      name: "Projects",
-      route: "#projects",
-    },
-    {
-      name: "Experience",
-      route: "#experience",
-    },
-    {
-      name: "Contact",
-      route: "#contact",
-    },
-  ];
-
   return (
-    <nav className="absolute top-0 left-0 w-full bg-transparent flex items-center justify-between lg:justify-start lg:gap-20 p-8 lg:p-10 lg:pt-6 text-primary z-50">
+    <nav className="absolute top-0 left-0 w-full bg-linear-to-b from-black/70 via-black/30 to-transparent flex items-center justify-between lg:justify-start lg:gap-20 py-4 px-8 lg:py-5 lg:px-10 text-primary z-50">
       {/* Logo shows on both */}
       <Link href="/" className="font-bebas text-4xl lg:text-5xl text-accent tracking-wider hover:opacity-85 transition-opacity duration-200">
         Kuan.Code
@@ -237,7 +246,7 @@ export default function Navbar() {
           <ul className="flex flex-col gap-8 text-lg font-medium px-6">
             {sections.map((section) => (
               <li key={section.name} className="flex">
-                <a
+                <Link
                   href={section.route}
                   onClick={() => {
                     setActiveSection(section.name);
@@ -250,7 +259,7 @@ export default function Navbar() {
                   }`}
                 >
                   {section.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -267,10 +276,10 @@ export default function Navbar() {
 
       {/* Desktop */}
       {/* Desktop Sections */}
-      <ul className="hidden lg:flex flex-auto h-full justify-start items-center gap-10 lg:gap-16 p-0 m-0 text-2xl font-medium text-secondary tracking-wide">
+      <ul className="hidden lg:flex flex-auto h-full justify-start items-center gap-10 lg:my-6 lg:gap-16 p-0 m-0 text-2xl font-medium text-secondary tracking-wide">
         {sections.map((section) => (
           <li key={section.name} className="flex items-center justify-center">
-            <a
+            <Link
               href={section.route}
               onClick={() => {
                 setActiveSection(section.name);
@@ -282,7 +291,7 @@ export default function Navbar() {
               }`}
             >
               {section.name}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
