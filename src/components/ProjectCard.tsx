@@ -91,7 +91,7 @@ export default function ProjectCard({
                 <h2 className="text-lg leading-tight line-clamp-2 lg:text-3xl">{projectName}</h2>
                 {tags.length > 0 && (
                     <p className="text-sm lg:text-xl tracking-wide text-secondary mt-1 line-clamp-1">
-                        {tags.slice(0, 3).join(' · ')}
+                        {tags.slice(0, 2).join(' · ')}
                     </p>
                 )}
             </div>

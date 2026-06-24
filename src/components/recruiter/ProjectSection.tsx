@@ -110,7 +110,7 @@ export default function ProjectSection() {
                 </div>
 
                 {/* Project Cards */}
-                <div className="w-full lg:overflow-hidden lg:py-12 lg:-my-12 lg:pointer-events-none">
+                <div className="w-full lg:overflow-hidden lg:py-12 lg:-my-12 lg:px-10 lg:-mx-10 lg:pointer-events-none">
 
                     {/* Mobile — native horizontal scroll */}
                     <div className='lg:hidden flex gap-4 flex-nowrap overflow-x-auto scrollbar-none py-4 -my-4'>
@@ -126,7 +126,7 @@ export default function ProjectSection() {
                                     icon={project.icon}
                                     status={project.status}
                                     description={project.description}
-                                    tags={project.tags}
+                                    tags={project.cast.map((member) => member.name)}
                                 />
                             </div>
                         ))}
@@ -151,7 +151,7 @@ export default function ProjectSection() {
                                     icon={project.icon}
                                     status={project.status}
                                     description={project.description}
-                                    tags={project.tags}
+                                    tags={project.cast.map((member) => member.name)}
                                 />
                             </div>
                         ))}

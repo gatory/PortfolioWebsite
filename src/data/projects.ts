@@ -12,9 +12,9 @@ export const projects: Project[] = [
         thumbnail: "/images/thumb-duck1.jpg",
         background: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-bg.png",
         status: "completed",
-        tags: ['Java', 'Java Swing', 'JUnit'],
         icon: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-icon.png",
-        
+
+        year: 2020,
         overview: `A reliable digital desktop timer built to help users beat procrastination 
         and stay focused using the Pomodoro study method, which cycles between 
         dedicated work intervals and short breaks. Targeted to students and helps 
@@ -22,9 +22,9 @@ export const projects: Project[] = [
         runtime: "4 Months",
         description: `A desktop Pomodoro study timer built for students to beat procrastination.`,
         cast: [
-            { name: 'Java', role: 'Backend', icon: '/images/icon/java.svg' },
-            { name: 'Java Swing', role: 'Frontend', icon: '/images/icon/java.svg' },
-            { name: 'JUnit', role: 'Testing', icon: '/images/icon/junit.svg' },
+            { name: 'Java', role: 'Backend' },
+            { name: 'Java Swing', role: 'Frontend' },
+            { name: 'JUnit', role: 'Testing' },
         ],
         scenes: [
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',
@@ -39,11 +39,9 @@ export const projects: Project[] = [
         projectName: "Full-Stack Development",
         route: "/projects/full-stack",
         githubUrl: "https://github.com/gatory/Eggcellent-Pomodoro.git",
-        background: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-bg.png",
         status: "completed",
-        tags: ['Java', 'Java Swing', 'JUnit'],
         icon: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-icon.png",
-        
+
         overview: `A reliable digital desktop timer built to help users beat procrastination 
         and stay focused using the Pomodoro study method, which cycles between 
         dedicated work intervals and short breaks. Targeted to students and helps 
@@ -51,9 +49,9 @@ export const projects: Project[] = [
         runtime: "4 Months",
         description: `A desktop Pomodoro study timer built for students to beat procrastination.`,
         cast: [
-            { name: 'Java', role: 'Backend', icon: '/images/icon/java.svg' },
-            { name: 'Java Swing', role: 'Frontend', icon: '/images/icon/java.svg' },
-            { name: 'JUnit', role: 'Testing', icon: '/images/icon/junit.svg' },
+            { name: 'React', role: 'Frontend' },
+            { name: 'Node.js', role: 'Backend' },
+            { name: 'PostgreSQL', role: 'Database' },
         ],
         scenes: [
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',
@@ -70,9 +68,8 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/gatory/Eggcellent-Pomodoro.git",
         background: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-bg.png",
         status: "completed",
-        tags: ['Java', 'Java Swing', 'JUnit'],
         icon: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-icon.png",
-        
+
         overview: `A reliable digital desktop timer built to help users beat procrastination 
         and stay focused using the Pomodoro study method, which cycles between 
         dedicated work intervals and short breaks. Targeted to students and helps 
@@ -80,16 +77,16 @@ export const projects: Project[] = [
         runtime: "4 Months",
         description: `A desktop Pomodoro study timer built for students to beat procrastination.`,
         cast: [
-            { name: 'Java', role: 'Backend', icon: '/images/icon/java.svg' },
-            { name: 'Java Swing', role: 'Frontend', icon: '/images/icon/java.svg' },
-            { name: 'JUnit', role: 'Testing', icon: '/images/icon/junit.svg' },
+            { name: 'C++', role: 'Firmware' },
+            { name: 'Arduino', role: 'Microcontroller' },
+            { name: 'Raspberry Pi', role: 'Host Interface' },
         ],
         scenes: [
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene2.png',
         ],
     },
-    
+
     {
         id: "3",
         category: "ai / machine learning",
@@ -100,9 +97,8 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/gatory/Eggcellent-Pomodoro.git",
         background: "",
         status: "completed",
-        tags: ['Jupyter Notebook', 'Python'],
         icon: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-icon.png",
-        
+
         overview: `A reliable digital desktop timer built to help users beat procrastination 
         and stay focused using the Pomodoro study method, which cycles between 
         dedicated work intervals and short breaks. Targeted to students and helps 
@@ -110,16 +106,16 @@ export const projects: Project[] = [
         runtime: "4 Months",
         description: `A desktop Pomodoro study timer built for students to beat procrastination.`,
         cast: [
-            { name: 'Java', role: 'Backend', icon: '/images/icon/java.svg' },
-            { name: 'Java Swing', role: 'Frontend', icon: '/images/icon/java.svg' },
-            { name: 'JUnit', role: 'Testing', icon: '/images/icon/junit.svg' },
+            { name: 'Python', role: 'Model Training' },
+            { name: 'Jupyter Notebook', role: 'Analysis' },
+            { name: 'FastAPI', role: 'API Deployment' },
         ],
         scenes: [
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene2.png',
         ],
     },
-    
+
     {
         id: "4",
         category: "data",
@@ -130,9 +126,8 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/gatory/Eggcellent-Pomodoro.git",
         background: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-bg.png",
         status: "completed",
-        tags: ['Java', 'Java Swing', 'JUnit'],
         icon: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-icon.png",
-        
+
         overview: `A reliable digital desktop timer built to help users beat procrastination 
         and stay focused using the Pomodoro study method, which cycles between 
         dedicated work intervals and short breaks. Targeted to students and helps 
@@ -140,16 +135,15 @@ export const projects: Project[] = [
         runtime: "4 Months",
         description: `A desktop Pomodoro study timer built for students to beat procrastination.`,
         cast: [
-            { name: 'Java', role: 'Backend', icon: '/images/icon/java.svg' },
-            { name: 'Java Swing', role: 'Frontend', icon: '/images/icon/java.svg' },
-            { name: 'JUnit', role: 'Testing', icon: '/images/icon/junit.svg' },
+            { name: 'Python', role: 'Data Processing' },
+            { name: 'PostgreSQL', role: 'Database' },
         ],
         scenes: [
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene2.png',
         ],
     },
-    
+
     {
         id: "5",
         category: "full-stack",
@@ -160,9 +154,8 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/gatory/Eggcellent-Pomodoro.git",
         background: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-bg.png",
         status: "completed",
-        tags: ['Tailwind CSS', 'TypeScript', 'Next.js'],
         icon: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-icon.png",
-        
+
         overview: `A reliable digital desktop timer built to help users beat procrastination 
         and stay focused using the Pomodoro study method, which cycles between 
         dedicated work intervals and short breaks. Targeted to students and helps 
@@ -170,16 +163,16 @@ export const projects: Project[] = [
         runtime: "4 Months",
         description: `A desktop Pomodoro study timer built for students to beat procrastination.`,
         cast: [
-            { name: 'Java', role: 'Backend', icon: '/images/icon/java.svg' },
-            { name: 'Java Swing', role: 'Frontend', icon: '/images/icon/java.svg' },
-            { name: 'JUnit', role: 'Testing', icon: '/images/icon/junit.svg' },
+            { name: 'Next.js', role: 'Framework' },
+            { name: 'TypeScript', role: 'Languages' },
+            { name: 'Tailwind CSS', role: 'Styling' },
         ],
         scenes: [
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene2.png',
         ],
     },
-    
+
     {
         id: "6",
         category: "data",
@@ -190,9 +183,8 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/gatory/Eggcellent-Pomodoro.git",
         background: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-bg.png",
         status: "completed",
-        tags: ['Java', 'Java Swing', 'JUnit'],
         icon: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-icon.png",
-        
+
         overview: `A reliable digital desktop timer built to help users beat procrastination 
         and stay focused using the Pomodoro study method, which cycles between 
         dedicated work intervals and short breaks. Targeted to students and helps 
@@ -200,9 +192,8 @@ export const projects: Project[] = [
         runtime: "4 Months",
         description: `A desktop Pomodoro study timer built for students to beat procrastination.`,
         cast: [
-            { name: 'Java', role: 'Backend', icon: '/images/icon/java.svg' },
-            { name: 'Java Swing', role: 'Frontend', icon: '/images/icon/java.svg' },
-            { name: 'JUnit', role: 'Testing', icon: '/images/icon/junit.svg' },
+            { name: 'Python', role: 'Data Processing' },
+            { name: 'PostgreSQL', role: 'Database' },
         ],
         scenes: [
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',
@@ -219,9 +210,8 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/gatory/Eggcellent-Pomodoro.git",
         background: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-bg.png",
         status: "completed",
-        tags: ['Java', 'Java Swing', 'JUnit'],
         icon: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-icon.png",
-        
+
         overview: `A reliable digital desktop timer built to help users beat procrastination 
         and stay focused using the Pomodoro study method, which cycles between 
         dedicated work intervals and short breaks. Targeted to students and helps 
@@ -229,9 +219,8 @@ export const projects: Project[] = [
         runtime: "4 Months",
         description: `A desktop Pomodoro study timer built for students to beat procrastination.`,
         cast: [
-            { name: 'Java', role: 'Backend', icon: '/images/icon/java.svg' },
-            { name: 'Java Swing', role: 'Frontend', icon: '/images/icon/java.svg' },
-            { name: 'JUnit', role: 'Testing', icon: '/images/icon/junit.svg' },
+            { name: 'Python', role: 'Data Analysis' },
+            { name: 'MySQL', role: 'Database' },
         ],
         scenes: [
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',

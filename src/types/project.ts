@@ -15,13 +15,12 @@ export type Project = {
   icon?: string,
   status: StatusBadgeProps["status"]
   description: string
-  tags?: string[]
-  
   // Detail page fields (only used on /projects/[id-name])
+  year?: number
   overview: string
   demoUrl?: string
   runtime: string
-  cast: { name: string; role: string; icon: string }[]
+  cast: { name: string; role: string; icon?: string }[]
   scenes?: string[]        // screenshot paths
   trailer?: string        // video url
   directorNote?: string
