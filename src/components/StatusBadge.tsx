@@ -2,12 +2,14 @@ export interface StatusBadgeProps {
     status: "completed" | "live" | "in-dev" | "upcoming";
     customLetterColor?: string;
     customBackgroundColor?: string;
+    className?: string;
 }
 
 export default function StatusBadge({
     status,
     customLetterColor,
     customBackgroundColor,
+    className = "absolute top-2 right-2 z-10 w-fit text-[12px] px-1.5 py-px lg:text-[15px] lg:px-2 lg:py-0.5",
 }: StatusBadgeProps) {
     const colorClasses = {
         completed: "bg-blue-900 text-blue-400",
@@ -18,10 +20,7 @@ export default function StatusBadge({
 
     return (
         <div
-            className={`absolute top-2 right-2 z-10 w-fit rounded-sm uppercase tracking-widest text-center font-medium
-                text-[12px] px-1.5 py-px
-                lg:text-[15px] lg:px-2 lg:py-0.5
-                ${colorClasses}`}
+            className={`${className} rounded-sm uppercase tracking-widest text-center font-medium selection:cursor-none ${colorClasses}`}
             style={{
                 backgroundColor: customBackgroundColor,
                 color: customLetterColor,
