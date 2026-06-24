@@ -1,3 +1,7 @@
+import Footer from '@/components/Footer'
+import Navbar from '@/components/recruiter/Navbar'
+import HeroSection from '@/components/recruiter/projects/HeroSection'
+import RecommendationSection from '@/components/recruiter/projects/RecommendationSection'
 import { projects } from '@/data/projects'
 import { notFound } from 'next/navigation'
 
@@ -13,7 +17,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <main>
-      <h1>{project.projectName}</h1>
+      <Navbar />
+      <HeroSection project={project} />
+      <RecommendationSection project={project} />
+      <Footer />
     </main>
   )
 }
