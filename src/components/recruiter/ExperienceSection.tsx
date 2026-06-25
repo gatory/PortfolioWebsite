@@ -77,7 +77,7 @@ export default function ExperienceSection() {
                         {/* Watch Now! */}
                         <div className="grow w-full flex items-center justify-center">
                             <Link
-                                href="#experience"
+                                href="/recruiter/experience"
                                 className="w-48 h-12 md:w-56 md:h-14 flex items-center justify-center gap-3 rounded-lg bg-white text-black hover:bg-white/90 hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 shadow-xl"
                             >
                                 <svg
@@ -161,7 +161,7 @@ export default function ExperienceSection() {
                                 {/* Watch Now! */}
                                 <div className="grow w-full flex items-center justify-start">
                                     <Link
-                                        href="#experience"
+                                        href="/recruiter/experience"
                                         className="w-48 h-12 md:w-56 md:h-14 flex items-center justify-center gap-3 rounded-lg bg-white text-black hover:bg-white/90 hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 shadow-xl"
                                     >
                                         <svg
