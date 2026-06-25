@@ -4,9 +4,10 @@ import Link from "next/link";
 export interface GithubButtonProps {
     githubRepoLink: string
     size?: "sm" | "md"
+    labelText?: string
 }
 
-export default function GithubButton({ githubRepoLink, size = "md" }: GithubButtonProps) {
+export default function GithubButton({ githubRepoLink, size = "md", labelText = "GitHub Repo" }: GithubButtonProps) {
     return (
         <Link
             href={githubRepoLink}
@@ -19,7 +20,7 @@ export default function GithubButton({ githubRepoLink, size = "md" }: GithubButt
         >
             <Image src="/images/icons/github.svg" alt="github icon" width={size === "sm" ? 16 : 26} height={size === "sm" ? 16 : 26} className="mr-1.5" />
             <h2 className={`font-barlow font-medium text-black ${size === "sm" ? "text-sm" : "text-2xl"}`}>
-                GitHub Repo
+                {labelText}
             </h2>
         </Link>
     )
