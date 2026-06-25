@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import PlayButton from "../PlayButton";
 import GithubButton from "../GithubButton";
+import TextType from "../effects/TextType";
 
 export default function HeroSection() {
   const slides = [
@@ -32,8 +33,7 @@ export default function HeroSection() {
 
   //   Swipe Logic
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [typedSubtitle, setTypedSubtitle] = useState("");
-  const [typedDescription, setTypedDescription] = useState("");
+  const [activeDescSlide, setActiveDescSlide] = useState<number | null>(null);
 
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
@@ -41,73 +41,42 @@ export default function HeroSection() {
   // Helper function for slide navigation
   const nextSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+    setActiveDescSlide(null);
   };
   const prevSlide = () => {
     setCurrentSlide(
       (prevSlide) => (prevSlide - 1 + slides.length) % slides.length,
     );
+    setActiveDescSlide(null);
   };
+
+  // Derived state for subtitle cursor visibility
+  const showSubtitleCursor = activeDescSlide !== currentSlide;
 
   // Typing effect for subtitle and description with dynamic auto-rotation
   useEffect(() => {
-    setTypedSubtitle("");
-    setTypedDescription("");
+    const subtitleText = slides[currentSlide].subtitle;
+    const descriptionText = slides[currentSlide].description;
 
-    let active = true;
-    let startTimeout: any;
-    let subtitleInterval: any;
-    let pauseTimeout: any;
-    let descriptionInterval: any;
-    let nextSlideTimeout: any;
+    const subtitleDuration = 400 + subtitleText.length * 80;
+    const pauseBeforeDesc = 500;
+    const descStartDelay = subtitleDuration + pauseBeforeDesc;
 
-    // Start typing subtitle after a short slide-in transition delay
-    startTimeout = setTimeout(() => {
-      if (!active) return;
-      let subtitleIdx = 0;
-      const subtitleText = slides[currentSlide].subtitle;
+    const descDuration = descriptionText.length * 20;
+    const pauseAfterDesc = 3500;
+    const nextSlideDelay = descStartDelay + descDuration + pauseAfterDesc;
 
-      subtitleInterval = setInterval(() => {
-        if (!active) return;
-        if (subtitleIdx < subtitleText.length) {
-          setTypedSubtitle(subtitleText.slice(0, subtitleIdx + 1));
-          subtitleIdx++;
-        } else {
-          clearInterval(subtitleInterval);
+    const descTimeout = setTimeout(() => {
+      setActiveDescSlide(currentSlide);
+    }, descStartDelay);
 
-          // Pause briefly after subtitle is finished before typing description
-          pauseTimeout = setTimeout(() => {
-            if (!active) return;
-            let descIdx = 0;
-            const descriptionText = slides[currentSlide].description;
-
-            descriptionInterval = setInterval(() => {
-              if (!active) return;
-              if (descIdx < descriptionText.length) {
-                setTypedDescription(descriptionText.slice(0, descIdx + 1));
-                descIdx++;
-              } else {
-                clearInterval(descriptionInterval);
-
-                // Hold on current slide after text is fully typed, then advance
-                nextSlideTimeout = setTimeout(() => {
-                  if (active) {
-                    nextSlide();
-                  }
-                }, 3500); // 3.5 seconds reading time
-              }
-            }, 20); // Snappy 20ms per character for description
-          }, 500); // 500ms pause between text sections
-        }
-      }, 80); // 80ms per character for subtitle
-    }, 400);
+    const slideTimeout = setTimeout(() => {
+      nextSlide();
+    }, nextSlideDelay);
 
     return () => {
-      active = false;
-      clearTimeout(startTimeout);
-      if (subtitleInterval) clearInterval(subtitleInterval);
-      clearTimeout(pauseTimeout);
-      if (descriptionInterval) clearInterval(descriptionInterval);
-      clearTimeout(nextSlideTimeout);
+      clearTimeout(descTimeout);
+      clearTimeout(slideTimeout);
     };
   }, [currentSlide]);
 
@@ -131,27 +100,6 @@ export default function HeroSection() {
 
     touchStartX.current = 0;
     touchEndX.current = 0;
-  };
-
-  const renderTypedText = (text: string, showCursor: boolean, cursorColorClass: string) => {
-    if (!text) {
-      return showCursor ? (
-        <span className={`w-0.75 h-[0.9em] animate-blink inline-block align-middle ${cursorColorClass}`} />
-      ) : null;
-    }
-    const textWithoutLastChar = text.slice(0, -1);
-    const lastChar = text.slice(-1);
-    return (
-      <>
-        {textWithoutLastChar}
-        <span className="whitespace-nowrap">
-          {lastChar}
-          {showCursor && (
-            <span className={`w-0.75 h-[0.9em] ml-1.5 animate-blink inline-block align-middle ${cursorColorClass}`} />
-          )}
-        </span>
-      </>
-    );
   };
 
   return (
@@ -208,15 +156,37 @@ export default function HeroSection() {
           Wei
         </h1>
         <h3 className="font-bebas text-3xl lg:text-6xl text-accent tracking-wider min-h-[1.2em] flex items-center">
-          {renderTypedText(typedSubtitle, typedDescription.length === 0, "bg-accent")}
+          <TextType
+            key={`sub-${currentSlide}`}
+            text={slides[currentSlide].subtitle}
+            as="span"
+            typingSpeed={80}
+            initialDelay={400}
+            loop={false}
+            showCursor={showSubtitleCursor}
+            cursorCharacter=""
+            cursorClassName="w-[3px] h-[0.9em] ml-1.5 inline-block align-middle bg-accent"
+          />
         </h3>
         <p className="hidden lg:block text-base text-secondary tracking-wide max-w-lg lg:text-2xl text-center lg:text-left min-h-[4.8em]">
-          {renderTypedText(typedDescription, typedDescription.length > 0, "bg-secondary")}
+          {activeDescSlide === currentSlide && (
+            <TextType
+              key={`desc-${currentSlide}`}
+              text={slides[currentSlide].description}
+              as="span"
+              typingSpeed={20}
+              initialDelay={0}
+              loop={false}
+              showCursor={true}
+              cursorCharacter=""
+              cursorClassName="w-[3px] h-[0.9em] ml-1.5 inline-block align-middle bg-secondary"
+            />
+          )}
         </p>
 
         <div className="flex gap-4 pt-5 lg:pt-0">
-          <PlayButton projectOverviewRoute="/projects/JetAutoPro" />
-          <GithubButton githubRepoLink="https://github.com/gatory" />
+          <PlayButton projectOverviewRoute="#projects" />
+          <GithubButton githubRepoLink="https://github.com/gatory" labelText="GitHub Profile" />
         </div>
 
         {/* Carousel Indicator (Mobile) */}
@@ -224,7 +194,10 @@ export default function HeroSection() {
           {slides.map((_, index) => (
             <button
               key={index}
-              onClick={() => setCurrentSlide(index)}
+              onClick={() => {
+                setCurrentSlide(index);
+                setActiveDescSlide(null);
+              }}
               className={`h-2 rounded-full transition-all duration-300 ${
                 index === currentSlide ? "w-6 bg-accent" : "w-2 bg-primary/60"
               }`}
@@ -237,7 +210,10 @@ export default function HeroSection() {
           {slides.map((slide, index) => (
             <button
               key={index}
-              onClick={() => setCurrentSlide(index)}
+              onClick={() => {
+                setCurrentSlide(index);
+                setActiveDescSlide(null);
+              }}
               className={`relative rounded-lg overflow-hidden transition-all duration-300 ${
                 index === currentSlide
                   ? "w-32 h-16 ring-2 ring-white opacity-100"
@@ -255,15 +231,6 @@ export default function HeroSection() {
           ))}
         </div>
       </div>
-      <style>{`
-        @keyframes blink {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0; }
-        }
-        .animate-blink {
-          animation: blink 0.8s step-end infinite;
-        }
-      `}</style>
     </section>
   );
 }
