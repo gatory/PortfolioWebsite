@@ -95,3 +95,31 @@ export const seasonsData: Season[] = [
         ]
     }
 ];
+
+export interface Company {
+    name: string;
+    role: string;
+    emoji: string;
+    icon?: string;
+}
+
+export const companiesData: Company[] = [
+    {
+        name: "Startup XYZ",
+        role: "Engineering Lead",
+        emoji: "🚀",
+        icon: "/images/icons/fire-icon.png"
+    },
+    {
+        name: "Freelance Era",
+        role: "Full-Stack Developer",
+        emoji: "💼",
+        icon: "/images/icons/computer-icon.png"
+    },
+    {
+        name: "UBC",
+        role: "Research Assistant",
+        emoji: "🎓",
+        icon: "/images/icons/default-icon.png"
+    }
+];
