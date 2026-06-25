@@ -53,7 +53,7 @@ export default function Footer() {
 
     return (
         <footer className="w-full bg-[#000000] border-t border-white/5 text-zinc-400 py-10 px-8 lg:px-10 font-barlow selection:bg-accent selection:text-white relative z-20">
-            <div className="max-w-6xl mx-auto flex flex-col gap-6">
+            <div className="flex flex-col gap-6">
 
                 {/* Contact Questions Header */}
                 <div className="text-zinc-300 text-base lg:text-lg">
