@@ -33,7 +33,7 @@ export default function RecommendationSection({ project }: { project: Project })
                     <p className="text-zinc-400 text-sm font-sans font-light">No similar projects found.</p>
                 ) : (
                     <div className="flex flex-col items-center gap-y-6">
-                        <div className="grid grid-cols-2 gap-x-4 gap-y-6 w-full justify-items-center">
+                        <div className="flex flex-col gap-y-6 w-full">
                             {visibleMobileProjects.map((proj) => (
                                 <ProjectCard
                                     key={proj.id}
