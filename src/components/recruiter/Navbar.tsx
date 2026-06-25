@@ -36,6 +36,9 @@ export default function Navbar() {
     if (pathname?.startsWith("/projects/")) {
       setActiveSection("Projects");
       return;
+    } else if (pathname?.startsWith("/recruiter/experience")) {
+      setActiveSection("Experience");
+      return;
     }
 
     const observerOptions = {
