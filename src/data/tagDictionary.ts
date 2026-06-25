@@ -60,6 +60,15 @@ export const TAG_COLORS: Record<string, string> = {
   "PyTorch":        "bg-red-500/30 text-red-200 border-red-500/50",
   "OpenAI":         "bg-teal-500/30 text-teal-200 border-teal-500/50",
   "Kraggle":        "bg-blue-500/30 text-blue-200 border-blue-500/50",
+
+  // Recruiter/Experience Specific
+  "System Design":  "bg-purple-500/30 text-purple-200 border-purple-500/50",
+  "Leadership":      "bg-amber-500/30 text-amber-200 border-amber-500/50",
+  "D3.js":          "bg-cyan-500/30 text-cyan-200 border-cyan-500/50",
+  "OAuth 2.0":      "bg-blue-500/30 text-blue-200 border-blue-500/50",
+  "RBAC":           "bg-emerald-500/30 text-emerald-200 border-emerald-500/50",
+  "Security":       "bg-amber-500/30 text-amber-200 border-amber-500/50",
+  "Algorithms":     "bg-indigo-500/30 text-indigo-200 border-indigo-500/50",
 }
 
 // Fallback for unknown tags
