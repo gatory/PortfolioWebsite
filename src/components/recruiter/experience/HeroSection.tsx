@@ -67,7 +67,7 @@ export default function HeroSection() {
                             </div>
                         </div>
                         {/* GitHub Button */}
-                        <GithubButton githubRepoLink="https://github.com/gatory" />
+                        <GithubButton githubRepoLink="https://github.com/gatory" labelText="GitHub Profile" />
                     </div>
                 </div>
                 <div className="w-full flex flex-col px-6 py-10 gap-y-4">
@@ -172,12 +172,12 @@ export default function HeroSection() {
                         </div>
 
                         {/* GitHub Button */}
-                        <GithubButton githubRepoLink="https://github.com/gatory" />
+                        <GithubButton githubRepoLink="https://github.com/gatory" labelText="GitHub Profile" />
 
                         {/* Project Overview */}
                         <div className="flex flex-col gap-y-2">
                             <span className="text-3xl tracking-wider text-start font-medium">Overview</span>
-                            <p className="text-xl text-secondary font-light max-w-2xl leading-relaxed">
+                            <p className="text-xl text-secondary font-light max-w-2xl leading-relaxed pb-8">
                                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
                             </p>
                         </div>
@@ -215,7 +215,6 @@ export default function HeroSection() {
                         </div>
                     </div>
                 </div>
-
             </section>
 
         </>

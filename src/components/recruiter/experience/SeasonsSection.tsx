@@ -11,7 +11,7 @@ export default function SeasonsSection() {
 
     return (
         <>
-            <section className="flex flex-col w-full text-foreground bg-background lg:mt-20 lg:px-8">
+            <section className="flex flex-col w-full text-foreground bg-background lg:my-10 lg:px-8">
                 <div className="px-6">
                     <h2 className="text-2xl lg:text-3xl mb-3 font-medium tracking-wide text-primary">Careers Series Collection</h2>
 
