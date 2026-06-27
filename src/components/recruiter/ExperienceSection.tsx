@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import TechnicalStackSection from './TechnicalStackSection';
@@ -151,11 +150,7 @@ export default function ExperienceSection() {
 
                                 {/* Description */}
                                 <p className="font-barlow text-primary text-lg leading-relaxed max-w-md">
-                                    Kuan Wei starts his career writing firmware for hardware nobody
-                                    else wanted to touch. As his skills grow, so does his ambition
-                                    — taking on full-stack products, data pipelines, and eventually
-                                    leading teams. Five seasons of late nights, hard problems, and
-                                    systems built from scratch.
+                                    Kuan Wei starts his career journey at UBC, balancing a rigorous Computer Science Honours curriculum with real-world engineering. Follow the origin story of a developer pushing the boundaries of software developer and AI.
                                 </p>
 
                                 {/* Watch Now! */}

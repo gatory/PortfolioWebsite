@@ -5,7 +5,7 @@ import { TAG_COLORS, DEFAULT_TAG_COLOR } from "@/data/tagDictionary";
 import { seasonsData } from "@/data/experience";
 
 export default function SeasonsSection() {
-    const [selectedSeason, setSelectedSeason] = useState(3);
+    const [selectedSeason, setSelectedSeason] = useState(seasonsData[0]?.number || 1);
 
     const activeSeason = seasonsData.find((s) => s.number === selectedSeason) || seasonsData[0];
 

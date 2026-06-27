@@ -9,26 +9,32 @@ import TextType from "../effects/TextType";
 export default function HeroSection() {
   const slides = [
     {
-      subtitle: "Full-Stack Developer",
+      subtitle: "Full-Stack Software Developer",
       description:
-        "Crafting high-performance web experiences for 5+ years. Specializing in React, Node.js and scalable system design.",
-      thumbnail: "/images/thumb-duck1.jpg",
-      background: "/images/UBCInsights/thumb-fullstack.jpg",
+        "From pencil scratches to production-ready products. Building software that solves real-world problems and scales with them.",
+      thumbnail: "/images/heros/fullstack-hero-mobile.jpg",
+      background: "/images/heros/fullstack-hero-desktop.jpg",
     },
     {
-      subtitle: "Embedded Systems Engineer",
+      subtitle: "AI & ML Developer",
       description:
-        "Building the gap between hardware and software. Specializing in robotics, firmware automation systems.",
-      thumbnail: "/images/thumb-duck2.png",
-      background: "/images/JetAutoPro/background-embedded.jpg",
+        "Discovering patterns and reducing human redundancy. Embedding intelligence where it matters most.",
+      thumbnail: "/images/heros/ai-ml-hero-mobile.jpg",
+      background: "/images/heros/ai-ml-hero-desktop.jpg",
     },
     {
       subtitle: "Data Analyst",
       description:
-        "Transforming complex datasets into insights. Specializing in Python, machine learning, and visualization tools.",
-      thumbnail: "/images/thumb-duck3.jpg",
-      background: "/images/AirbnbNYC/thumb-matrix.jpg",
+        "Transforming raw data into clear, executable recommendations. Turning numbers into narratives that drive big decisions.",
+      thumbnail: "/images/heros/data-analyst-hero-mobile.jpg",
+      background: "/images/heros/data-analyst-hero-desktop.jpg",
     },
+    {
+      subtitle: "Systems & Embedded Developer",
+      description: "Crafting high-performance, low-level code that bridges the gap between hardware and software.",
+      thumbnail: "/images/heros/embedded-hero-mobile.jpg",
+      background: "/images/heros/embedded-hero-desktop.jpg",
+    }
   ];
 
   //   Swipe Logic
@@ -115,9 +121,8 @@ export default function HeroSection() {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1500 ease-in-out ${
-              index === currentSlide ? "opacity-100" : "opacity-0"
-            }`}
+            className={`absolute inset-0 transition-opacity duration-1500 ease-in-out ${index === currentSlide ? "opacity-100" : "opacity-0"
+              }`}
           >
             {/* Desktop Background */}
             <Image
@@ -198,9 +203,8 @@ export default function HeroSection() {
                 setCurrentSlide(index);
                 setActiveDescSlide(null);
               }}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                index === currentSlide ? "w-6 bg-accent" : "w-2 bg-primary/60"
-              }`}
+              className={`h-2 rounded-full transition-all duration-300 ${index === currentSlide ? "w-6 bg-accent" : "w-2 bg-primary/60"
+                }`}
             />
           ))}
         </div>
@@ -214,11 +218,10 @@ export default function HeroSection() {
                 setCurrentSlide(index);
                 setActiveDescSlide(null);
               }}
-              className={`relative rounded-lg overflow-hidden transition-all duration-300 ${
-                index === currentSlide
+              className={`relative rounded-lg overflow-hidden transition-all duration-300 ${index === currentSlide
                   ? "w-32 h-16 ring-2 ring-white opacity-100"
                   : "w-24 h-12 opacity-50 hover:opacity-80 hover:w-26 hover:h-13"
-              }`}
+                }`}
             >
               <Image
                 src={slide.background}

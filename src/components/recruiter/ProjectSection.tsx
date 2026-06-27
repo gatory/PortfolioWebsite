@@ -181,6 +181,7 @@ export default function ProjectSection() {
                             key={project.id}
                             projectName={project.projectName}
                             route={project.route}
+                            progress={project.progress}
                             background={project.background}
                             bgColor={project.bgColor}
                             icon={project.icon}

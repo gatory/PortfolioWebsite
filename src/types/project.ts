@@ -13,6 +13,7 @@ export type Project = {
   background?: string,
   bgColor?: string,
   icon?: string,
+  progress?: number,
   status: StatusBadgeProps["status"]
   description: string
   // Detail page fields (only used on /projects/[id-name])

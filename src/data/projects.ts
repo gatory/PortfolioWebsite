@@ -1,315 +1,279 @@
 import { Project } from "@/types/project";
 
+// If no background, then must have bgColor and icon
+// currently in dev must have a progress
+
 export const projects: Project[] = [
     {
         id: "eggcellent-pomodoro",
         category: "misc",
         featured: true,
-        currentlyBuilding: true,
+        currentlyBuilding: false,
         projectName: "Eggcellent Pomodoro",
         route: "/projects/eggcellent-pomodoro",
         githubUrl: "https://github.com/gatory/Eggcellent-Pomodoro.git",
-        thumbnail: "/images/thumb-duck1.jpg",
         background: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-bg.png",
+        bgColor: "#7B46B4",
+        icon: "/images/Eggcellent-Pomodoro/egg-icon.png",
         status: "completed",
-        icon: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-icon.png",
-
-        year: 2020,
-        overview: `A reliable digital desktop timer built to help users beat procrastination 
-        and stay focused using the Pomodoro study method, which cycles between 
-        dedicated work intervals and short breaks. Targeted to students and helps 
-        boost productivity.`,
+        description: "A desktop Pomodoro study timer built for students to beat procrastination.",
+        year: 2024,
+        overview: "A reliable desktop timer built to help students beat procrastination using the Pomodoro method, cycling between focused work intervals and short breaks to maximize study sessions.",
         runtime: "4 Months",
-        description: `A desktop Pomodoro study timer built for students to beat procrastination.`,
         cast: [
             { name: 'Java', role: 'Backend' },
             { name: 'Java Swing', role: 'Frontend' },
             { name: 'JUnit', role: 'Testing' },
         ],
         scenes: [
+            '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-bg.png',
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene2.png',
+            '/images/Eggcellent-Pomodoro/UML_Design_Diagram.png'
         ],
-        directorNote: `A reliable digital desktop timer built to help users beat procrastination 
-        and stay focused using the Pomodoro study method, which cycles between 
-        dedicated work intervals and short breaks. Targeted to students and helps 
-        boost productivity.`
+        directorNote: "The goal was simple, to build something I'd actually use. Eggcellent Pomodoro was developed with a user-first workflow, clear user stories, and test-driven development and UML diagrams to keep scope tight and bugs minimal. Java OOP kept the architecture clean, JUnit5 kept it honest, and JSON persistence meant your session survived even if your laptop didn't."
     },
     {
-        id: "full-stack",
+        id: "portfolio-website",
         category: "full-stack",
         featured: true,
-        currentlyBuilding: false,
-        projectName: "Full-Stack Development",
-        route: "/projects/full-stack",
-        githubUrl: "https://github.com/gatory/Eggcellent-Pomodoro.git",
-        status: "completed",
-        icon: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-icon.png",
-
-        overview: `A reliable digital desktop timer built to help users beat procrastination 
-        and stay focused using the Pomodoro study method, which cycles between 
-        dedicated work intervals and short breaks. Targeted to students and helps 
-        boost productivity.`,
-        runtime: "4 Months",
-        description: `A desktop Pomodoro study timer built for students to beat procrastination.`,
+        currentlyBuilding: true,
+        projectName: "KUAN.CODE",
+        route: "/projects/portfolio-website",
+        githubUrl: "https://github.com/gatory/portfolio-website.git",
+        status: "in-dev",
+        progress: 33,
+        description: "My personal portfolio website showcasing my projects, design process, and technical growth digitally.",
+        year: 2026,
+        overview: "A highly visual personal portfolio website designed in Figma and developed using Next.js to showcase technical software engineering and data science projects in a Netflix-inspired streaming format.",
+        runtime: "Ongoing",
         cast: [
+            { name: 'Figma', role: 'Design' },
+            { name: 'Next.js', role: 'Full-stack Framework' },
             { name: 'React', role: 'Frontend' },
-            { name: 'Node.js', role: 'Backend' },
-            { name: 'PostgreSQL', role: 'Database' },
-        ],
-        scenes: [
-            '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',
-            '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene2.png',
-        ],
-    },
-    {
-        id: "2",
-        category: "embedded",
-        featured: true,
-        currentlyBuilding: true,
-        projectName: "embedded",
-        route: "/projects/2",
-        githubUrl: "https://github.com/gatory/Eggcellent-Pomodoro.git",
-        background: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-bg.png",
-        status: "completed",
-        icon: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-icon.png",
-
-        overview: `A reliable digital desktop timer built to help users beat procrastination 
-        and stay focused using the Pomodoro study method, which cycles between 
-        dedicated work intervals and short breaks. Targeted to students and helps 
-        boost productivity.`,
-        runtime: "4 Months",
-        description: `A desktop Pomodoro study timer built for students to beat procrastination.`,
-        cast: [
-            { name: 'C++', role: 'Firmware' },
-            { name: 'Arduino', role: 'Microcontroller' },
-            { name: 'Raspberry Pi', role: 'Host Interface' },
-        ],
-        scenes: [
-            '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',
-            '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene2.png',
-        ],
-    },
-
-    {
-        id: "3",
-        category: "ai / machine learning",
-        featured: true,
-        currentlyBuilding: true,
-        projectName: "ai / machine-learning",
-        route: "/projects/3",
-        githubUrl: "https://github.com/gatory/Eggcellent-Pomodoro.git",
-        background: "",
-        status: "completed",
-        icon: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-icon.png",
-
-        overview: `A reliable digital desktop timer built to help users beat procrastination 
-        and stay focused using the Pomodoro study method, which cycles between 
-        dedicated work intervals and short breaks. Targeted to students and helps 
-        boost productivity.`,
-        runtime: "4 Months",
-        description: `A desktop Pomodoro study timer built for students to beat procrastination.`,
-        cast: [
-            { name: 'Python', role: 'Model Training' },
-            { name: 'Jupyter Notebook', role: 'Analysis' },
-            { name: 'FastAPI', role: 'API Deployment' },
-        ],
-        scenes: [
-            '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',
-            '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene2.png',
-        ],
-    },
-
-    {
-        id: "4",
-        category: "data",
-        featured: true,
-        currentlyBuilding: false,
-        projectName: "Data",
-        route: "/projects/4",
-        githubUrl: "https://github.com/gatory/Eggcellent-Pomodoro.git",
-        background: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-bg.png",
-        status: "completed",
-        icon: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-icon.png",
-
-        overview: `A reliable digital desktop timer built to help users beat procrastination 
-        and stay focused using the Pomodoro study method, which cycles between 
-        dedicated work intervals and short breaks. Targeted to students and helps 
-        boost productivity.`,
-        runtime: "4 Months",
-        description: `A desktop Pomodoro study timer built for students to beat procrastination.`,
-        cast: [
-            { name: 'Python', role: 'Data Processing' },
-            { name: 'PostgreSQL', role: 'Database' },
-        ],
-        scenes: [
-            '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',
-            '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene2.png',
-        ],
-    },
-
-    {
-        id: "5",
-        category: "full-stack",
-        featured: true,
-        currentlyBuilding: true,
-        projectName: "Portfolio Website",
-        route: "/projects/5",
-        githubUrl: "https://github.com/gatory/Eggcellent-Pomodoro.git",
-        background: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-bg.png",
-        status: "completed",
-        icon: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-icon.png",
-
-        overview: `A reliable digital desktop timer built to help users beat procrastination 
-        and stay focused using the Pomodoro study method, which cycles between 
-        dedicated work intervals and short breaks. Targeted to students and helps 
-        boost productivity.`,
-        runtime: "4 Months",
-        description: `A desktop Pomodoro study timer built for students to beat procrastination.`,
-        cast: [
-            { name: 'Next.js', role: 'Framework' },
-            { name: 'TypeScript', role: 'Languages' },
+            { name: 'TypeScript', role: 'Typed JavaScript' },
             { name: 'Tailwind CSS', role: 'Styling' },
         ],
         scenes: [
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene2.png',
         ],
+        directorNote: "KUAN.CODE was built to not only showcase my technical portfolio and skills, but also a platform to refine my design skills. Inspired by Netflix's interface, I first explored the experience through Figma design before translating those designs into a fully functional web application that followed Tailwind CSS's responsive design. While the frontend was a main focus, I also took the opportunity to experiment with backend development by integrating the Resend API to handle my contact form. Additionally, I also prioritized maintainability and extensibility when inputting new data by creating reusable React components, organizing the application with Next.js App dynamic routing, and using TypeScript to ensure type safety throughout the codebase."
     },
-
     {
-        id: "6",
-        category: "data",
-        featured: true,
-        currentlyBuilding: false,
-        projectName: "Data",
-        route: "/projects/6",
-        githubUrl: "https://github.com/gatory/Eggcellent-Pomodoro.git",
+        id: "chaotic-order",
+        category: "ai / machine learning",
+        featured: false,
+        currentlyBuilding: true,
+        projectName: "Chaotic Order",
+        route: "/projects/chaotic-order",
+        githubUrl: "https://github.com/gatory/Chaotic-Order.git",
         background: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-bg.png",
-        status: "completed",
-        icon: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-icon.png",
-
-        overview: `A reliable digital desktop timer built to help users beat procrastination 
-        and stay focused using the Pomodoro study method, which cycles between 
-        dedicated work intervals and short breaks. Targeted to students and helps 
-        boost productivity.`,
-        runtime: "4 Months",
-        description: `A desktop Pomodoro study timer built for students to beat procrastination.`,
+        status: "in-dev",
+        progress: 80,
+        description: "A competitive 2D strategy game based on Tic-Tac-Toe featuring intelligent AI opponents built from scratch.",
+        overview: "A 2D game variant of Tic-Tac-Toe powered by standard game AI mechanics. It features an algorithmic opponent that challenges players using custom, from-scratch optimization architectures.",
+        runtime: "2 Months",
         cast: [
-            { name: 'Python', role: 'Data Processing' },
-            { name: 'PostgreSQL', role: 'Database' },
+            { name: 'C++', role: 'Programming' },
+            { name: 'raylib', role: 'Game Engine' },
         ],
         scenes: [
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene2.png',
         ],
+        directorNote: "Chaotic Order is a spin-off minigame that was inspired by the game of tic-tac-toe. While the original game is a simple game of strategy, I wanted to take it a step further by changing the rules a bit and integrating AI algorithms to create a more challenging and engaging gameplay experience. The AI was implemented using C++ with use of CSP, minimax, and genetic algorithms that were created from scratch. This project allowed me to explore different aspects of AI that deviate from the typical LLM and machine learning models that current trends has exposed us to, and focus on the more traditional search and optimization algorithms. It was definitely a fun project."
     },
     {
-        id: "7",
-        category: "data",
+        id: "stock-sense",
+        category: "ai / machine learning",
         featured: true,
         currentlyBuilding: false,
-        projectName: "Data",
-        route: "/projects/7",
-        githubUrl: "https://github.com/gatory/Eggcellent-Pomodoro.git",
-        background: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-bg.png",
+        projectName: "Stock Sense",
+        route: "/projects/stock-sense",
+        githubUrl: "https://github.com/gatory/StockSense",
         status: "completed",
-        icon: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-icon.png",
-
-        overview: `A reliable digital desktop timer built to help users beat procrastination 
-        and stay focused using the Pomodoro study method, which cycles between 
-        dedicated work intervals and short breaks. Targeted to students and helps 
-        boost productivity.`,
-        runtime: "4 Months",
-        description: `A desktop Pomodoro study timer built for students to beat procrastination.`,
+        description: "A Discord chatbot that provides retail investors with automated market news summaries and technical stock analysis.",
+        overview: "An agentic AI chat assistant for Discord utilizing Retrieval-Augmented Generation (RAG) to scrape, parse, and condense market articles and financial video insights for active retail investors.",
+        runtime: "2 Weeks",
         cast: [
-            { name: 'Python', role: 'Data Analysis' },
-            { name: 'MySQL', role: 'Database' },
+            { name: 'Python', role: 'Backend' },
+            { name: 'Discord', role: 'Chatbot Interface' },
+            { name: 'Ollama', role: 'LLM Framework' },
+            { name: 'ChromaDB', role: 'Database' },
+            { name: 'HuggingFace', role: 'Chunking' },
         ],
         scenes: [
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene2.png',
         ],
+        directorNote: "Stock Sense began as a project I built that aimed to help stock investors stay updated with the most recent financial shifts without wasting hours of their time researching on their own. By using a locally hosted LLM with Ollama and HuggingFaceEmbeddings to vectorize data, Stock Sense uses the practices of Retrieval-Augmented Generation (RAG) to find the most relevant information and summarize it to the user. Additionally, prompt engineering (SMART prompts) was used to help reduce hallucinations that are commonly produced by LLMs and prevent the bot from fabricating incorrect or non-factual information, this ensures that users can rely on Stock Sense to provide accurate and trustworthy information."
     },
     {
-        id: "8",
+        id: "ubc-insights",
         category: "data",
         featured: true,
         currentlyBuilding: false,
-        projectName: "Data",
-        route: "/projects/8",
-        githubUrl: "https://github.com/gatory/Eggcellent-Pomodoro.git",
+        projectName: "UBC Insights",
+        route: "/projects/ubc-insights",
+        githubUrl: "https://github.com/gatory/UBC_Insight",
         background: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-bg.png",
         status: "completed",
-        icon: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-icon.png",
-
-        overview: `A reliable digital desktop timer built to help users beat procrastination 
-        and stay focused using the Pomodoro study method, which cycles between 
-        dedicated work intervals and short breaks. Targeted to students and helps 
-        boost productivity.`,
+        description: "A full-stack academic dashboard built for exploring university course offerings and campus facilities data.",
+        overview: "A web platform offering students and faculty granular insight into university databases, combining custom data parsing backend logic with fluid frontend layout components.",
         runtime: "4 Months",
-        description: `A desktop Pomodoro study timer built for students to beat procrastination.`,
         cast: [
-            { name: 'Python', role: 'Data Analysis' },
-            { name: 'MySQL', role: 'Database' },
+            { name: 'TypeScript', role: 'Query Language & Logic' },
+            { name: 'Node.js / Express', role: 'RESTful API' },
+            { name: 'Mocha & Chai', role: 'Testing Suite' },
         ],
         scenes: [
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene2.png',
         ],
+        directorNote: "UBC Insights is a full-stack course project built as an academic dashboard for students and professors to explore university course offerings and campus facilities data. My partner and I developed a custom query language and parallel data-processing pipeline that was capable of handling uploads of up to 5,000 files (around 200MB) within seconds. Additionally, we designed custom RESTful APIs validated by a comprehensive unit and integration testing suite using Mocha and Chai, which were later leveraged to power the dashboard's data visualizations."
     },
     {
-        id: "9",
-        category: "data",
+        id: "nyc-airbnb",
+        category: "ai / machine learning",
         featured: true,
         currentlyBuilding: false,
-        projectName: "Data",
-        route: "/projects/9",
-        githubUrl: "https://github.com/gatory/Eggcellent-Pomodoro.git",
+        projectName: "NYC AirBnB Price Predictor",
+        route: "/projects/nyc-airbnb",
+        githubUrl: "https://github.com/gatory/NYC-Airbnb-Price-Prediction.git",
         background: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-bg.png",
         status: "completed",
-        icon: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-icon.png",
-
-        overview: `A reliable digital desktop timer built to help users beat procrastination 
-        and stay focused using the Pomodoro study method, which cycles between 
-        dedicated work intervals and short breaks. Targeted to students and helps 
-        boost productivity.`,
+        progress: 100, // Marked 100 since status is completed
+        description: "A data science pipeline evaluating and predicting optimal Airbnb rental listing prices across New York City.",
+        overview: "A machine learning project evaluating rental pricing indices across New York City's five boroughs by executing exploratory feature engineering on tabular real estate datasets.",
         runtime: "4 Months",
-        description: `A desktop Pomodoro study timer built for students to beat procrastination.`,
         cast: [
-            { name: 'Python', role: 'Data Analysis' },
-            { name: 'MySQL', role: 'Database' },
+            { name: 'Python', role: 'Data Science' },
+            { name: 'Scikit-Learn', role: 'Machine Learning' },
+            { name: 'Pandas / NumPy', role: 'Data Engineering' },
         ],
         scenes: [
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene2.png',
         ],
+        directorNote: "The AirBnB Price Predictor was a course project that aimed to help AirBnB hosts evaluate their own listing prices against their competition in New York City. The dataset was pulled from Kaggle and contained over 34,000 entries with 9 features each. With further feature engineering (splitting features into more useful features and scaling them) we were able to train and evaluate the performance of multiple machine learning models which included Linear Regression, K-Nearest Neighbour Regression, and Random Forest Regression. In the end, Random Forest Regression performed the best out of the three with the metrics of RMSE and MAPE scores. In the end, these models were also able to provide feature importance which revealed factors that hosts could improve on to improve their pricing and marketability."
     },
     {
-        id: "10",
+        id: "player-analysis",
         category: "data",
         featured: true,
         currentlyBuilding: false,
-        projectName: "Data",
-        route: "/projects/10",
-        githubUrl: "https://github.com/gatory/Eggcellent-Pomodoro.git",
+        projectName: "PlaCraft.ai Player Analysis",
+        route: "/projects/player-analysis",
+        githubUrl: "https://github.com/gatory/PlaCraft.ai-Player-Analysis",
         background: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-bg.png",
         status: "completed",
-        icon: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-icon.png",
-
-        overview: `A reliable digital desktop timer built to help users beat procrastination 
-        and stay focused using the Pomodoro study method, which cycles between 
-        dedicated work intervals and short breaks. Targeted to students and helps 
-        boost productivity.`,
+        description: "A statistical data analysis project predicting video game newsletter subscriber conversion rates.",
+        overview: "A formal behavior analysis study leveraging R and statistical modeling to track gamer engagement telemetry and uncover demographic factors driving player newsletter sign-ups.",
         runtime: "4 Months",
-        description: `A desktop Pomodoro study timer built for students to beat procrastination.`,
         cast: [
-            { name: 'Python', role: 'Data Analysis' },
-            { name: 'MySQL', role: 'Database' },
+            { name: 'Jupyter Notebook', role: 'IDE' },
+            { name: 'R', role: 'Statistical Software' },
+            { name: 'ggplot2', role: 'Data Visualization' },
         ],
         scenes: [
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',
             '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene2.png',
         ],
+        directorNote: "The PlaCraft.ai Player Analysis was a group course project that analyzed player characteristics and behaviour that might help predict whether a player would subscribe to game-related newsletters. With provided datasets from The Pacific Laboratory for Artificial Intelligence (PLAI) and their project on PlaCraft.ai, we were able to perform several data visualizations and analyses to look for correlations and patterns with player behaviour and subscriptions. By using R and its extensive libraries, we created compelling visualizations and ran several classification algorithms that yielded accuracies up to 80%. These insights could help tailor marketing strategies to players in their own respective categories and ultimately improve visibility and accessibility of the game."
     },
-]
+    {
+        id: "astroid-database",
+        category: "full-stack",
+        featured: true,
+        currentlyBuilding: false,
+        projectName: "Astroid Database",
+        route: "/projects/astroid-database",
+        githubUrl: "https://github.com/gatory/Astroid-Database",
+        background: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-bg.png",
+        status: "completed",
+        description: "A secure web application built to manage, map, and query astronomical relational datasets of near-Earth objects.",
+        overview: "A relational database management web application that stores structural links between asteroids, comets, and spatial paths with protected CRUD access.",
+        runtime: "4 Months",
+        cast: [
+            { name: 'JavaScript', role: 'Full-stack Integration' },
+            { name: 'MySQL', role: 'Relational Database' },
+        ],
+        scenes: [
+            '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',
+            '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene2.png',
+        ],
+        directorNote: "The Astroid Database was a collaborative course project focused on applying relational database management principles using SQL and JavaScript. The database describes the relationships between asteroids, comets, and other objects that orbit the Earth. From designing ER diagrams to structuring normalized data tables, we implemented a fully functional SQL backend that handled CRUD operations via an intuitive, user-friendly web interface. Additionally, we performed input sanitization to prevent SQL injection attacks so that the database stays secure and reliable for users."
+    },
+    {
+        id: "crispit",
+        category: "full-stack",
+        featured: true,
+        currentlyBuilding: false,
+        projectName: "Crispit",
+        route: "/projects/crispit",
+        githubUrl: "https://github.com/gatory/crispit",
+        background: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-bg.png",
+        status: "completed",
+        description: "A mobile application fighting domestic food waste by tracking groceries and estimating food freshness via AI scans.",
+        overview: "A hackathon-winning mobile application serving as a digital inventory for household refrigerators, prompting users on ingredient expiration timelines and generating smart recipes.",
+        runtime: "4 Months", // Left as 4 months based on your file structure, though hackathons are typically shorter!
+        cast: [
+            { name: 'React Native', role: 'Mobile Framework' },
+            { name: 'Gemini API', role: 'AI Integration' },
+        ],
+        scenes: [
+            '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',
+            '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene2.png',
+        ],
+        directorNote: "CrispIt is a mobile app developed during a HackTheCost Hackathon hosted at UBC. The app attempts to address the global issue of food waste by connecting AI intelligence to assess the freshness of produce and alerting users of spoilage or expiration dates. Users can simply scan their produce or the barcode of everyday groceries to find a freshness and carbon footprint score, helping them find the best products while gaining awareness about the environmental impact of their food choices. Additionally, it acts as a digital fridge that sends out reminders if a product is close to spoilage or expiration, and suggests recipes using Gemini API integrations based on what is expiring soon."
+    },
+    {
+        id: "lehooper",
+        category: "ai / machine learning",
+        featured: true,
+        currentlyBuilding: false,
+        projectName: "LeHooper",
+        route: "/projects/lehooper",
+        githubUrl: "https://github.com/gatory/lehooper",
+        background: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-bg.png",
+        status: "completed",
+        description: "A computer vision sports-tech tool tracking basketball players' mechanics to optimize shooting forms.",
+        overview: "An athletic biomechanics feedback platform integrating skeletal pose estimators and computer vision networks to critique user basketball shot form against professional baselines.",
+        runtime: "4 Months",
+        cast: [
+            { name: 'Python', role: 'Backend Logic' },
+            { name: 'OpenCV / OpenPose', role: 'Computer Vision' },
+            { name: 'YOLOv8', role: 'Object Detection' },
+        ],
+        scenes: [
+            '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',
+            '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene2.png',
+        ],
+        directorNote: "LeHooper was developed with a sub-team at the UBC DSCI Club, creating a program made to help basketball enthusiasts improve their shooting technique. With the use of YOLOv8 and OpenCV motion tracking, LeHooper is able to track and analyze a user’s shot form with high accuracy and provide feedback by comparing it with professional players' shot forms extracted from YouTube and self-made videos. We trained a logistic regression model for shot type classification using OpenPose coordinates and provided interactive technical feedback using LLMs."
+    },
+    {
+        id: "jetauto",
+        category: "embedded",
+        featured: true,
+        currentlyBuilding: true,
+        projectName: "JetAuto",
+        route: "/projects/jetauto",
+        githubUrl: "https://github.com/gatory/jetauto",
+        background: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-bg.png",
+        status: "upcoming",
+        progress: 0,
+        description: "An exploratory hardware passion project centering on automated robotic navigation and localized spatial mapping.",
+        overview: "An upcoming physical robotics platform using onboard LiDAR arrays, omni-wheel drive mechanisms, and processing frameworks to practice computer vision pathfinding.",
+        runtime: "4 Months",
+        cast: [
+            { name: 'ROS2', role: 'Robotics Framework' },
+            { name: 'Python', role: 'Hardware Control' },
+        ],
+        scenes: [
+            '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',
+            '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene2.png',
+        ],
+        directorNote: "The JetAutoPro is a robot bought online as a passion project. Composed of a robotic arm, omni-wheel chassis, and a lidar sensor, I plan on exploring more in ROS2, object detection and self-driving using LLMs and AI to build a fully functional autonomous robot."
+    },
+];

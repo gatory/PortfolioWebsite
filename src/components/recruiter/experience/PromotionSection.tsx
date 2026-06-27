@@ -23,13 +23,13 @@ export default function PromotionSection() {
             {/* Content Container */}
             <div className="relative z-10 flex flex-col items-center justify-center text-center w-full pointer-events-none">
                 {/* End of Season Header */}
-                <p className="text-accent font-semibold tracking-widest text-sm lg:text-md uppercase">
-                    End of Season 3
-                </p>
+                {/* <p className="text-accent font-semibold tracking-widest text-sm lg:text-md uppercase">
+                    End of Season 2
+                </p> */}
 
                 {/* Main Bebas Heading */}
                 <h2 className="font-bebas text-5xl lg:text-6xl text-primary tracking-wider leading-tight mt-3 flex flex-col select-none">
-                    <span>Season 4</span>
+                    <span>Season 1</span>
                     <span>is currently being</span>
                     <span className="text-accent">written</span>
                 </h2>

@@ -72,9 +72,12 @@ export default function HeroSection() {
                 </div>
                 <div className="w-full flex flex-col px-6 py-10 gap-y-4">
                     <div className="w-full">
-                        <h2 className="text-3xl mb-3 font-medium">Overview</h2>
+                        <h2 className="text-3xl mb-3 font-medium">About Me</h2>
                         <p className="text-lg text-secondary leading-relaxed font-light">
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+                            Hey I'm Kuan! I'm a full-stack developer and an AI enthusiast from the University of British Columbia CS program based in Vancouver Canada. I love building
+                            user-centric applications that can make lives easier and always on the look out for potential startup ideas. I'm a big believer in only building tools that I would use
+                            personally. I work primarily with TypeScript, React, and Python but I am always on the look out for new technologies to learn and experiment with. Most Recently, I have been
+                            exploring the world of AI and am particularly interested in how it can be used to help enhance productivity and creativity and I am excited to see how it evolves in the coming years.
                         </p>
                     </div>
 
@@ -123,7 +126,7 @@ export default function HeroSection() {
                 </div>
 
                 {/* Foreground Container (Flex Row for content layout) */}
-                <div className="relative z-10 w-full mx-auto px-26 md:px-15 h-full flex flex-row items-start justify-between gap-16 pt-40">
+                <div className="relative z-10 w-full mx-auto px-26 lg:px-15 h-full flex flex-row items-start justify-between gap-16 pt-40">
 
                     {/* 1. Thumbnail Container */}
                     <div className="relative w-69 aspect-2/3 shrink-0 overflow-hidden rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,1)]">
@@ -173,14 +176,6 @@ export default function HeroSection() {
 
                         {/* GitHub Button */}
                         <GithubButton githubRepoLink="https://github.com/gatory" labelText="GitHub Profile" />
-
-                        {/* Project Overview */}
-                        <div className="flex flex-col gap-y-2">
-                            <span className="text-3xl tracking-wider text-start font-medium">Overview</span>
-                            <p className="text-xl text-secondary font-light max-w-2xl leading-relaxed pb-8">
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
-                            </p>
-                        </div>
                     </div>
 
                     {/* 3. Cast & Credits Container */}
@@ -197,6 +192,7 @@ export default function HeroSection() {
                                                 fill
                                                 className="object-contain"
                                                 sizes="56px"
+                                                priority
                                             />
                                         </div>
                                         <div className="flex flex-col text-left">
@@ -215,8 +211,18 @@ export default function HeroSection() {
                         </div>
                     </div>
                 </div>
-            </section>
 
+                {/* About Me Section (below the main row banner, spanning the full content grid width) */}
+                <div className="hidden lg:flex relative z-10 w-full mx-auto px-26 lg:px-15 py-6 flex-col gap-y-4">
+                    <h3 className="text-3xl tracking-wider text-start font-medium text-primary">About Me</h3>
+                    <p className="text-xl text-secondary leading-relaxed">
+                        Hey I'm Kuan! I'm a full-stack developer and an AI enthusiast from the University of British Columbia CS program based in Vancouver Canada. I love building
+                        user-centric applications that can make lives easier and always on the look out for potential startup ideas. I'm a big believer in only building tools that I would use
+                        personally. I work primarily with TypeScript, React, and Python but I am always on the look out for new technologies to learn and experiment with. Most Recently, I have been
+                        exploring the world of AI and am particularly interested in how it can be used to help enhance productivity and creativity and I am excited to see how it evolves in the coming years.
+                    </p>
+                </div>
+            </section>
         </>
     );
 }
