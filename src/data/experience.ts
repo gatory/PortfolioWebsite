@@ -4,7 +4,8 @@ export interface Episode {
     isCurrent?: boolean;
     date: string;
     description: string;
-    emoji: string;
+    emoji?: string;
+    icon?: string;
     progress?: number;
     tags: string[];
     link?: string;
@@ -46,9 +47,10 @@ export const seasonsData: Season[] = [
             {
                 id: "1.2",
                 title: "Software Developer - Connect Me Free Tutoring & Mentoring",
+                link: "https://connectmego.org/leadership-teams/",
                 date: "Sep 2025 - Present",
-                description: "Working as a software developer for Connect Me Free Tutoring & Mentoring, building a platform to connect students with tutors and mentors.",
-                emoji: "",
+                description: "Helping as a software developer on the software subteam for the non-profit organization Connect Me Free Tutoring & Mentoring, building a platform to connect students with tutors and mentors.",
+                icon: "/images/experience/connectme-logo.png",
                 tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"]
             },
             {
@@ -75,6 +77,6 @@ export const companiesData: Company[] = [
         name: "Connect Me Free Tutoring & Mentoring",
         role: "Software Developer",
         emoji: "🤝",
-        icon: "/images/icons/default-icon.png"
+        icon: "/images/experience/connectme-logo.png"
     }
 ];

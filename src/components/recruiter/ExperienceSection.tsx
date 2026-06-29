@@ -73,22 +73,47 @@ export default function ExperienceSection() {
                             </div>
                         </div>
 
-                        {/* Watch Now! */}
-                        <div className="grow w-full flex items-center justify-center">
+                        {/* Buttons */}
+                        <div className="grow w-full flex flex-row items-center justify-center gap-4">
                             <Link
                                 href="/recruiter/experience"
-                                className="w-48 h-12 md:w-56 md:h-14 flex items-center justify-center gap-3 rounded-lg bg-white text-black hover:bg-white/90 hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 shadow-xl"
+                                className="w-40 h-11 md:w-48 md:h-13 flex items-center justify-center gap-2 rounded-lg bg-white text-black hover:bg-white/90 hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 shadow-xl"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24"
                                     fill="black"
-                                    className="w-6 h-6 md:w-8 md:h-8"
+                                    className="w-5 h-5 md:w-6 md:h-6"
                                 >
                                     <path d="M8 5v14l11-7z" />
                                 </svg>
-                                <span className="font-bebas text-xl md:text-2xl tracking-widest">Watch Now!</span>
+                                <span className="font-bebas text-lg md:text-xl tracking-wider">Watch Now!</span>
                             </Link>
+
+                            <a
+                                href="/images/experience/Kuan_Wei_Resume.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-40 h-11 md:w-48 md:h-13 flex items-center justify-center gap-2 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-white hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 shadow-xl"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    className="w-5 h-5 md:w-6 md:h-6"
+                                >
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                    <polyline points="14 2 14 8 20 8" />
+                                    <line x1="16" y1="13" x2="8" y2="13" />
+                                    <line x1="16" y1="17" x2="8" y2="17" />
+                                    <polyline points="10 9 9 9 8 9" />
+                                </svg>
+                                <span className="font-bebas text-lg md:text-xl tracking-wider">Get Resume</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -153,22 +178,47 @@ export default function ExperienceSection() {
                                     Kuan Wei starts his career journey at UBC, balancing a rigorous Computer Science Honours curriculum with real-world engineering. Follow the origin story of a developer pushing the boundaries of software developer and AI.
                                 </p>
 
-                                {/* Watch Now! */}
-                                <div className="grow w-full flex items-center justify-start">
+                                {/* Buttons */}
+                                <div className="grow w-full flex items-center justify-start gap-4">
                                     <Link
                                         href="/recruiter/experience"
-                                        className="w-48 h-12 md:w-56 md:h-14 flex items-center justify-center gap-3 rounded-lg bg-white text-black hover:bg-white/90 hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 shadow-xl"
+                                        className="w-40 h-11 md:w-48 md:h-13 flex items-center justify-center gap-2 rounded-lg bg-white text-black hover:bg-white/90 hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 shadow-xl"
                                     >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 24 24"
                                             fill="black"
-                                            className="w-6 h-6 md:w-8 md:h-8"
+                                            className="w-5 h-5 md:w-6 md:h-6"
                                         >
                                             <path d="M8 5v14l11-7z" />
                                         </svg>
-                                        <span className="font-bebas text-xl md:text-2xl tracking-widest">Watch Now!</span>
+                                        <span className="font-bebas text-lg md:text-xl tracking-wider">Watch Now!</span>
                                     </Link>
+
+                                    <a
+                                        href="/images/experience/Kuan_Wei_Resume.pdf"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-40 h-11 md:w-48 md:h-13 flex items-center justify-center gap-2 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-white hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 shadow-xl"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            strokeWidth="2"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            className="w-5 h-5 md:w-6 md:h-6"
+                                        >
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                            <polyline points="14 2 14 8 20 8" />
+                                            <line x1="16" y1="13" x2="8" y2="13" />
+                                            <line x1="16" y1="17" x2="8" y2="17" />
+                                            <polyline points="10 9 9 9 8 9" />
+                                        </svg>
+                                        <span className="font-bebas text-lg md:text-xl tracking-wider">Get Resume</span>
+                                    </a>
                                 </div>
 
                             </div>

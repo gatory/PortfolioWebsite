@@ -7,6 +7,7 @@ interface FooterLink {
     label: string;
     href: string;
     isExternal?: boolean;
+    inactive?: boolean;
 }
 
 export default function Footer() {
@@ -33,14 +34,14 @@ export default function Footer() {
         [
             { label: "Profile Selection", href: "/" },
             { label: "Recruiter Profile", href: "/recruiter" },
-            { label: "Teammate Profile (TBD)", href: "/teammate" },
-            { label: "Stalker Profile (TBD)", href: "/stalker" },
+            { label: "Teammate Profile (TBD)", href: "/teammate", inactive: true },
+            { label: "Stalker Profile (TBD)", href: "/stalker", inactive: true },
         ],
         [
-            { label: "Projects", href: "#projects" },
-            { label: "Experience", href: "#experience" },
-            { label: "Technical Stack", href: "#experience" }, // Navigates close to the stack
-            { label: "Resume / CV", href: "#contact" }, // Interactive call to action
+            { label: "Projects", href: "/recruiter#projects" },
+            { label: "Experience", href: "/recruiter#experience" },
+            { label: "Technical Stack", href: "/recruiter#experience" }, // Navigates close to the stack
+            { label: "Resume / CV", href: "/images/experience/Kuan_Wei_Resume.pdf", isExternal: true }, // Interactive call to action
         ],
         [
             { label: "Contact Me", href: "#contact" },
@@ -75,7 +76,11 @@ export default function Footer() {
                         >
                             {column.map((link, linkIdx) => (
                                 <div key={linkIdx} className="w-full text-center">
-                                    {link.isExternal ? (
+                                    {link.inactive ? (
+                                        <span className="text-xs lg:text-sm text-zinc-600 block text-center cursor-not-allowed select-none">
+                                            {link.label}
+                                        </span>
+                                    ) : link.isExternal ? (
                                         <a
                                             href={link.href}
                                             target="_blank"

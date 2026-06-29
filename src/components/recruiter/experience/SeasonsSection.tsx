@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { TAG_COLORS, DEFAULT_TAG_COLOR } from "@/data/tagDictionary";
 import { seasonsData } from "@/data/experience";
 
@@ -46,7 +47,19 @@ export default function SeasonsSection() {
                                     </span>
                                     {/* Thumbnail Box */}
                                     <div className="relative w-20 h-14 lg:w-28 lg:h-18 rounded-lg bg-[#111625] border border-slate-800 flex items-center justify-center overflow-hidden">
-                                        <span className="text-2xl lg:text-3xl select-none">{episode.emoji}</span>
+                                        {episode.icon ? (
+                                            <div className="relative w-full h-full">
+                                                <Image
+                                                    src={episode.icon}
+                                                    alt={`${episode.title} logo`}
+                                                    fill
+                                                    className="object-contain p-2"
+                                                    sizes="(max-width: 1024px) 80px, 112px"
+                                                />
+                                            </div>
+                                        ) : (
+                                            <span className="text-2xl lg:text-3xl select-none">{episode.emoji}</span>
+                                        )}
                                         {/* Progress bar if current */}
                                         {episode.isCurrent && episode.progress && (
                                             <div className="absolute bottom-0 left-0 right-0 h-0.75 bg-slate-950">

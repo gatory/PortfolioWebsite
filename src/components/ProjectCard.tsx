@@ -102,7 +102,7 @@ export default function ProjectCard({
             {/* Mobile */}
             <Link
                 href={route}
-                className="lg:hidden absolute inset-0 rounded-lg overflow-hidden shadow-md block">
+                className="lg:hidden absolute inset-0 rounded-lg overflow-hidden shadow-md block border border-white/20">
                 <CardFront />
             </Link>
 

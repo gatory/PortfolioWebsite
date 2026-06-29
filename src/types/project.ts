@@ -25,4 +25,5 @@ export type Project = {
   scenes?: string[]        // screenshot paths
   trailer?: string        // video url
   directorNote?: string
+  writingSample?: string
 }
