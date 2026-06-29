@@ -15,7 +15,7 @@ const barlowCondensed = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
-    title: "Kuan Wei | Portfolio",
+    title: "Kuan Wei | CS Portfolio",
     description: "Software Engineer | Full Stack Developer | AI Enthusiast",
 };
 
