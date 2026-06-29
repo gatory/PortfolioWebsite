@@ -13,7 +13,7 @@ export default function HeroSection() {
                 <div className="relative w-full min-h-dvh flex flex-col">
                     {/* Background Image Container */}
                     <div className="relative w-full h-[35vh] min-h-55 shrink-0">
-                        <Image src="/images/experienceCard-bg.png"
+                        <Image src="/images/experience/experienceCard-bg.png"
                             alt={`experience background`}
                             fill
                             className="object-cover" />
@@ -25,7 +25,7 @@ export default function HeroSection() {
                             <div
                                 className="absolute inset-0"
                             >
-                                <Image src="/images/experienceCard-thumb.png" alt="experience thumbnail" fill className="object-cover" />
+                                <Image src="/images/experience/experienceCard-thumb.png" alt="experience thumbnail" fill className="object-cover" />
                             </div>
 
                         </div>
@@ -39,7 +39,7 @@ export default function HeroSection() {
                         </p>
                         {/* Title */}
                         <div className="px-6 text-center font-bebas z-25">
-                            <Image src="/images/titlecard.png" alt="titlecard" width={250} height={25} />
+                            <Image src="/images/experience/titlecard.png" alt="titlecard" width={250} height={25} />
                         </div>
 
                         {/* Run Time And Info */}
@@ -117,7 +117,7 @@ export default function HeroSection() {
                                     <div key={company.name} className="flex items-center gap-x-3 w-[calc(50%-12px)] min-w-35">
                                         <div className="relative w-10 h-10 shrink-0">
                                             <Image
-                                                src={company.icon || "/images/icons/default-icon.png"}
+                                                src={company.icon || "/images/experience/icons/default-icon.png"}
                                                 alt={`${company.name} logo`}
                                                 fill
                                                 className="object-contain"
@@ -146,7 +146,7 @@ export default function HeroSection() {
             <section className="relative hidden lg:flex flex-col w-full h-fit text-foreground overflow-hidden">
                 {/* Background Image Container */}
                 <div className="absolute inset-0 w-full h-screen z-0">
-                    <Image src="/images/experienceCard-bg.png"
+                    <Image src="/images/experience/experienceCard-bg.png"
                         alt="experience background"
                         fill
                         className="object-cover -translate-y-32" />
@@ -162,7 +162,7 @@ export default function HeroSection() {
                         <div
                             className="absolute inset-0"
                         >
-                            <Image src="/images/experienceCard-thumb.png" alt="experience thumbnail" fill className="object-cover" />
+                            <Image src="/images/experience/experienceCard-thumb.png" alt="experience thumbnail" fill className="object-cover" />
                         </div>
                     </div>
 
@@ -174,7 +174,7 @@ export default function HeroSection() {
                                 Career Series
                             </span>
                             {/* Title */}
-                            <Image src="/images/titlecard-left-aligned.png" alt="experience title" width={350} height={70} />
+                            <Image src="/images/experience/titlecard-left-aligned.png" alt="experience title" width={350} height={70} />
 
                             {/* Run Time And Info */}
                             <div className="flex items-center w-max gap-x-4 flex-wrap justify-center">

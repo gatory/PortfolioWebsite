@@ -12,9 +12,9 @@ export const projects: Project[] = [
         projectName: "Eggcellent Pomodoro",
         route: "/projects/eggcellent-pomodoro",
         githubUrl: "https://github.com/gatory/Eggcellent-Pomodoro.git",
-        background: "/images/Eggcellent-Pomodoro/eggcellent-pomodoro-bg.png",
+        background: "/images/eggcellent-pomodoro/eggcellent-pomodoro-bg.png",
         bgColor: "#2596be",
-        icon: "/images/Eggcellent-Pomodoro/egg-icon.png",
+        icon: "/images/eggcellent-pomodoro/egg-icon.png",
         status: "completed",
         description: "A desktop Pomodoro study timer built for students to beat procrastination.",
         year: 2024,
@@ -26,10 +26,10 @@ export const projects: Project[] = [
             { name: 'JUnit5', role: 'Testing' },
         ],
         scenes: [
-            '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-bg.png',
-            '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',
-            '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene2.png',
-            '/images/Eggcellent-Pomodoro/UML_Design_Diagram.png'
+            '/images/eggcellent-pomodoro/eggcellent-pomodoro-bg.png',
+            '/images/eggcellent-pomodoro/eggcellent-pomodoro-scene1.png',
+            '/images/eggcellent-pomodoro/eggcellent-pomodoro-scene2.png',
+            '/images/eggcellent-pomodoro/UML_Design_Diagram.png'
         ],
         directorNote: "The goal was simple, to build something I'd actually use. Eggcellent Pomodoro was developed with a user-first workflow, clear user stories, and test-driven development and UML diagrams to keep scope tight and bugs minimal. Java OOP kept the architecture clean, JUnit5 kept it honest, and JSON persistence meant your session survived even if your laptop didn't."
     },

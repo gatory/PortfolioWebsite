@@ -13,7 +13,7 @@ export default function ExperienceSection() {
                     {/* Background */}
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-full -z-25">
                         <Image
-                            src="/images/experienceCard-bg.png"
+                            src="/images/experience/experienceCard-bg.png"
                             alt="Experience Card Background"
                             fill
                             className="object-cover"
@@ -38,7 +38,7 @@ export default function ExperienceSection() {
 
                         <div className="relative z-50 w-full h-1/2 rounded-xl">
                             <Image
-                                src="/images/experienceCard-thumb.png"
+                                src="/images/experience/experienceCard-thumb.png"
                                 alt="Experience Card Thumbnail"
                                 fill
                                 className="object-contain"
@@ -48,7 +48,7 @@ export default function ExperienceSection() {
 
                         <div className='relative z-50 w-full h-26'>
                             <Image
-                                src="/images/titlecard.png"
+                                src="/images/experience/titlecard.png"
                                 alt="Experience Card Thumbnail"
                                 fill
                                 className="object-contain"
@@ -133,7 +133,7 @@ export default function ExperienceSection() {
 
                         {/* Background image */}
                         <Image
-                            src="/images/experienceCard-bg.png"
+                            src="/images/experience/experienceCard-bg.png"
                             alt="Experience Card Background"
                             fill
                             className="object-cover object-right transition-transform duration-700 ease-out group-hover:scale-105"
@@ -147,7 +147,7 @@ export default function ExperienceSection() {
 
                             {/* Left — portrait thumbnail */}
                             <div className="relative w-75 rounded-xl overflow-hidden shrink-0 self-stretch">
-                                <Image src="/images/experienceCard-thumb.png" alt="Experience" fill className="object-cover" />
+                                <Image src="/images/experience/experienceCard-thumb.png" alt="Experience" fill className="object-cover" />
                             </div>
 
                             {/* Right — text content */}
@@ -155,7 +155,7 @@ export default function ExperienceSection() {
 
                                 {/* Title */}
                                 <div>
-                                    <Image src="/images/titlecard-left-aligned.png" alt="Title Card" width={300} height={300} className="object-contain" />
+                                    <Image src="/images/experience/titlecard-left-aligned.png" alt="Title Card" width={300} height={300} className="object-contain" />
                                 </div>
 
                                 {/* Tags */}
