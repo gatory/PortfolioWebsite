@@ -256,32 +256,32 @@ export const projects: Project[] = [
         ],
         directorNote: "CrispIt is a mobile app developed during a HackTheCost Hackathon hosted at UBC. The app attempts to address the global issue of food waste by connecting AI intelligence to assess the freshness of produce and alerting users of spoilage or expiration dates. Users can simply scan their produce or the barcode of everyday groceries to find a freshness and carbon footprint score, helping them find the best products while gaining awareness about the environmental impact of their food choices. Additionally, it acts as a digital fridge that sends out reminders if a product is close to spoilage or expiration, and suggests recipes using Gemini API integrations based on what is expiring soon."
     },
-    {
-        id: "lehooper",
-        category: "ai / machine learning",
-        featured: false,
-        currentlyBuilding: false,
-        year: 2026,
-        projectName: "LeHooper",
-        route: "/projects/lehooper",
-        githubUrl: "https://github.com/gatory/lehooper",
-        icon: "/images/projects/lehooper/lehooper-icon.png",
-        bgColor: "#132C33",
-        status: "completed",
-        description: "A computer vision sports-tech tool tracking basketball players' mechanics to optimize shooting forms.",
-        overview: "An athletic biomechanics feedback platform integrating skeletal pose estimators and computer vision networks to critique user basketball shot form against professional baselines.",
-        runtime: "4 Months",
-        cast: [
-            { name: 'Python', role: 'Backend Logic' },
-            { name: 'OpenCV', role: 'Computer Vision' },
-            { name: 'YOLOv8', role: 'Object Detection' },
-        ],
-        scenes: [
-            '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',
-            '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene2.png',
-        ],
-        directorNote: "LeHooper was developed with a sub-team at the UBC DSCI Club, creating a program made to help basketball enthusiasts improve their shooting technique. With the use of YOLOv8 and OpenCV motion tracking, LeHooper is able to track and analyze a user’s shot form with high accuracy and provide feedback by comparing it with professional players' shot forms extracted from YouTube and self-made videos. We trained a logistic regression model for shot type classification using OpenPose coordinates and provided interactive technical feedback using LLMs."
-    },
+    // {
+    //     id: "lehooper",
+    //     category: "ai / machine learning",
+    //     featured: false,
+    //     currentlyBuilding: false,
+    //     year: 2026,
+    //     projectName: "LeHooper",
+    //     route: "/projects/lehooper",
+    //     githubUrl: "https://github.com/gatory/lehooper",
+    //     icon: "/images/projects/lehooper/lehooper-icon.png",
+    //     bgColor: "#132C33",
+    //     status: "completed",
+    //     description: "A computer vision sports-tech tool tracking basketball players' mechanics to optimize shooting forms.",
+    //     overview: "An athletic biomechanics feedback platform integrating skeletal pose estimators and computer vision networks to critique user basketball shot form against professional baselines.",
+    //     runtime: "4 Months",
+    //     cast: [
+    //         { name: 'Python', role: 'Backend Logic' },
+    //         { name: 'OpenCV', role: 'Computer Vision' },
+    //         { name: 'YOLOv8', role: 'Object Detection' },
+    //     ],
+    //     scenes: [
+    //         '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene1.png',
+    //         '/images/Eggcellent-Pomodoro/eggcellent-pomodoro-scene2.png',
+    //     ],
+    //     directorNote: "LeHooper was developed with a sub-team at the UBC DSCI Club, creating a program made to help basketball enthusiasts improve their shooting technique. With the use of YOLOv8 and OpenCV motion tracking, LeHooper is able to track and analyze a user’s shot form with high accuracy and provide feedback by comparing it with professional players' shot forms extracted from YouTube and self-made videos. We trained a logistic regression model for shot type classification using OpenPose coordinates and provided interactive technical feedback using LLMs."
+    // },
     {
         id: "jetauto",
         category: "embedded",
